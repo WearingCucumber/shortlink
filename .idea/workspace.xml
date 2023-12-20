@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 上传一些杂项">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/GroupDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/mapper/GroupMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 初始化短链接分组功能代码">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/database/BaseDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/req/ShortLinkGroupSaveGroupReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/toolkit/RandomStringGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shortlink开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/shortlink开发文档.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/GroupDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/GroupDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/UserDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/UserDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +148,7 @@
       <workItem from="1700136311000" duration="42000" />
       <workItem from="1702905440051" duration="7754000" />
       <workItem from="1702962780473" duration="15321000" />
-      <workItem from="1703038697653" duration="11174000" />
+      <workItem from="1703038697653" duration="13101000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -284,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703084064081</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feature: 初始化短链接分组功能代码">
+      <option name="closed" value="true" />
+      <created>1703085745688</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703085745688</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,6 +340,7 @@
     <MESSAGE value="feature: 开发短链接规约功能" />
     <MESSAGE value="feature: 开发用户管理功能1.用户查询 2. 用户退出 3.用户登录 ...." />
     <MESSAGE value="feature: 上传一些杂项" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 上传一些杂项" />
+    <MESSAGE value="feature: 初始化短链接分组功能代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 初始化短链接分组功能代码" />
   </component>
 </project>
