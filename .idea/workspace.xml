@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发短链接后管分组新增功能">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发短链接分组排序字段">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/resp/ShortLinkGroupRespDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/GroupDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/GroupDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +144,7 @@
       <workItem from="1700136311000" duration="42000" />
       <workItem from="1702905440051" duration="7754000" />
       <workItem from="1702962780473" duration="15321000" />
-      <workItem from="1703038697653" duration="13497000" />
+      <workItem from="1703038697653" duration="14056000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -304,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703087694145</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="feature: 开发短链接分组排序字段">
+      <option name="closed" value="true" />
+      <created>1703087976649</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1703087976649</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,6 +363,7 @@
     <MESSAGE value="feature: 初始化短链接分组功能代码" />
     <MESSAGE value="feature: 开发数据库持久层对象基础属性" />
     <MESSAGE value="feature: 开发短链接后管分组新增功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发短链接后管分组新增功能" />
+    <MESSAGE value="feature: 开发短链接分组排序字段" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发短链接分组排序字段" />
   </component>
 </project>
