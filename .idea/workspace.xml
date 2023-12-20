@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发用户管理功能1.用户查询 2. 用户退出 3.用户登录 ....">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shortlink开发文档.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\PathSetting\apache-maven-3.8.6\maven-repo" />
+        <option name="mavenHome" value="D:/PathSetting/apache-maven-3.8.6" />
+        <option name="userSettingsFile" value="D:\PathSetting\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2YDMqCMlDz7YsfekrYNYUWqs4xr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17normal",
+    "last_opened_file_path": "C:/Users/lzp/Desktop/shortLink/gateway",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.27471265",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\resources" />
+      <recent name="C:\Users\lzp\Desktop\shortLink\gateway\src\main\resources" />
+      <recent name="C:\Users\lzp\Desktop\shortLink\gateway\src\main\java\com\study\shortLink\gateway" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.study.shortLink.admin.dto.req" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="shortLink" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="shortLink" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShortLinkAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shortLink-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.shortLink.admin.ShortLinkAdminApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.study.shortLink.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="" />
+      <created>1700055886547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700055886547</updated>
+      <workItem from="1700055887624" duration="3766000" />
+      <workItem from="1700136311000" duration="42000" />
+      <workItem from="1702905440051" duration="7754000" />
+      <workItem from="1702962780473" duration="15321000" />
+      <workItem from="1703038697653" duration="9728000" />
+    </task>
+    <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
+      <option name="closed" value="true" />
+      <created>1702965243878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702965243878</updated>
+    </task>
+    <task id="LOCAL-00002" summary="配置git上传 忽略配置文件">
+      <option name="closed" value="true" />
+      <created>1702965251064</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702965251064</updated>
+    </task>
+    <task id="LOCAL-00003" summary="开发公共依赖以及多个模块定义">
+      <option name="closed" value="true" />
+      <created>1702965399543</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702965399543</updated>
+    </task>
+    <task id="LOCAL-00004" summary="开发短链接中心项目初始化">
+      <option name="closed" value="true" />
+      <created>1702965434687</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702965434687</updated>
+    </task>
+    <task id="LOCAL-00005" summary="开发短链接网关项目初始化">
+      <option name="closed" value="true" />
+      <created>1702965458620</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702965458620</updated>
+    </task>
+    <task id="LOCAL-00006" summary="开发全局异常拦截器">
+      <option name="closed" value="true" />
+      <created>1702965487760</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702965487760</updated>
+    </task>
+    <task id="LOCAL-00007" summary="开发用户自定义异常码">
+      <option name="closed" value="true" />
+      <created>1702965516314</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702965516314</updated>
+    </task>
+    <task id="LOCAL-00008" summary="基本框架搭建">
+      <option name="closed" value="true" />
+      <created>1702982606794</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702982606794</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feature: 提交项目忽略提交配置文件">
+      <option name="closed" value="true" />
+      <created>1703083658538</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703083658538</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feature: 开发公共依赖以及多个模块定义">
+      <option name="closed" value="true" />
+      <created>1703083700584</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703083700584</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feature: 开发短链接中心项目初始化">
+      <option name="closed" value="true" />
+      <created>1703083732742</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703083732742</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feature: 开发短链接网关项目初始化">
+      <option name="closed" value="true" />
+      <created>1703083764817</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703083764817</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feature: 开发全局异常拦截器">
+      <option name="closed" value="true" />
+      <created>1703083796630</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703083796630</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feature: 开发用户自定义异常码">
+      <option name="closed" value="true" />
+      <created>1703083885207</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1703083885207</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feature: 开发短链接规约功能">
+      <option name="closed" value="true" />
+      <created>1703083939073</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703083939073</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feature: 开发用户管理功能1.用户查询 2. 用户退出 3.用户登录 ....">
+      <option name="closed" value="true" />
+      <created>1703084041907</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703084041907</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="配置git上传 忽略配置文件" />
+    <MESSAGE value="开发公共依赖以及多个模块定义" />
+    <MESSAGE value="开发短链接中心项目初始化" />
+    <MESSAGE value="开发短链接网关项目初始化" />
+    <MESSAGE value="开发全局异常拦截器" />
+    <MESSAGE value="开发用户自定义异常码" />
+    <MESSAGE value="基本框架搭建" />
+    <MESSAGE value="feature: 提交项目忽略提交配置文件" />
+    <MESSAGE value="feature: 开发公共依赖以及多个模块定义" />
+    <MESSAGE value="feature: 开发短链接中心项目初始化" />
+    <MESSAGE value="feature: 开发短链接网关项目初始化" />
+    <MESSAGE value="feature: 开发全局异常拦截器" />
+    <MESSAGE value="feature: 开发用户自定义异常码" />
+    <MESSAGE value="feature: 开发短链接规约功能" />
+    <MESSAGE value="feature: 开发用户管理功能1.用户查询 2. 用户退出 3.用户登录 ...." />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发用户管理功能1.用户查询 2. 用户退出 3.用户登录 ...." />
+  </component>
+</project>
