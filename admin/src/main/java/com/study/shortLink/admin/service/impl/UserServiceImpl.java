@@ -1,7 +1,7 @@
 package com.study.shortLink.admin.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.lang.UUID;
+import cn.hutool.jwt.JWT;
 import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
@@ -104,10 +104,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
          *  Key: token 标识
          *  val：json 字符串（用户信息）
          */
-        String uuid = UUID.randomUUID().toString();
-        stringRedisTemplate.opsForHash().put("login_"+requestParam.getUsername(),uuid,JSON.toJSONString(userDO));
+
+        String token = JWT.create()
+                .setPayload("username", requestParam.getUsername())
+                .setKey("WearingCucumber".getBytes())
+                .sign();
+//        String uuid = UUID.randomUUID().toString();
+        stringRedisTemplate.opsForHash().put("login_"+requestParam.getUsername(),token,JSON.toJSONString(userDO));
         stringRedisTemplate.expire("login_"+requestParam.getUsername(),30, TimeUnit.MINUTES);
-        return new UserLoginRespDTO(uuid);
+        return new UserLoginRespDTO(token);
     }
 
     @Override
