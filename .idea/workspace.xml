@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发短链接查询分组集合">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发短链接后管系统 用户登录信息上下文封装">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserTransmitFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserTransmitFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +142,7 @@
       <workItem from="1700136311000" duration="42000" />
       <workItem from="1702905440051" duration="7754000" />
       <workItem from="1702962780473" duration="15321000" />
-      <workItem from="1703038697653" duration="14724000" />
+      <workItem from="1703038697653" duration="19318000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -319,7 +320,31 @@
       <option name="project" value="LOCAL" />
       <updated>1703088648911</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feature: 更改用户登录使用的token 原：uuid 现：使用JWT">
+      <option name="closed" value="true" />
+      <created>1703089294761</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1703089294761</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feature: 开发短链接后管系统 用户登陆时间修改为30天">
+      <option name="closed" value="true" />
+      <created>1703092821706</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1703092821706</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feature: 开发短链接后管系统 用户登录信息上下文封装">
+      <option name="closed" value="true" />
+      <created>1703092843336</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1703092843336</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,6 +395,25 @@
     <MESSAGE value="feature: 开发短链接后管分组新增功能" />
     <MESSAGE value="feature: 开发短链接分组排序字段" />
     <MESSAGE value="feature: 开发短链接查询分组集合" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发短链接查询分组集合" />
+    <MESSAGE value="feature: 更改用户登录使用的token 原：uuid 现：使用JWT" />
+    <MESSAGE value="feature: 开发短链接后管系统 用户登陆时间修改为30天" />
+    <MESSAGE value="feature: 开发短链接后管系统 用户登录信息上下文封装" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发短链接后管系统 用户登录信息上下文封装" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
