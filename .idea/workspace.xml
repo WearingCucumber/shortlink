@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 初始化短链接分组功能代码">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/database/BaseDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/req/ShortLinkGroupSaveGroupReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/toolkit/RandomStringGenerator.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发短链接后管分组新增功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/GroupDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/GroupDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/UserDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dao/entity/UserDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +142,7 @@
       <workItem from="1700136311000" duration="42000" />
       <workItem from="1702905440051" duration="7754000" />
       <workItem from="1702962780473" duration="15321000" />
-      <workItem from="1703038697653" duration="13101000" />
+      <workItem from="1703038697653" duration="13497000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -294,7 +288,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703085745688</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feature: 开发数据库持久层对象基础属性">
+      <option name="closed" value="true" />
+      <created>1703087678096</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1703087678096</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feature: 开发短链接后管分组新增功能">
+      <option name="closed" value="true" />
+      <created>1703087694145</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1703087694145</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +351,8 @@
     <MESSAGE value="feature: 开发用户管理功能1.用户查询 2. 用户退出 3.用户登录 ...." />
     <MESSAGE value="feature: 上传一些杂项" />
     <MESSAGE value="feature: 初始化短链接分组功能代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 初始化短链接分组功能代码" />
+    <MESSAGE value="feature: 开发数据库持久层对象基础属性" />
+    <MESSAGE value="feature: 开发短链接后管分组新增功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发短链接后管分组新增功能" />
   </component>
 </project>
