@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.study.shortLink.admin.common.biz.user.UserContext;
 import com.study.shortLink.admin.common.convention.exception.ClientException;
 import com.study.shortLink.admin.dao.entity.UserDO;
 import com.study.shortLink.admin.dao.mapper.UserMapper;
@@ -77,9 +78,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
 
     @Override
     public void update(UserUpdateReqDTO requestParam) {
-        //TODO 验证当前用户名是否为登录用户
-        LambdaUpdateWrapper<UserDO> wrapper = Wrappers.lambdaUpdate(UserDO.class).eq(UserDO::getUsername, requestParam.getUsername());
-        baseMapper.update(BeanUtil.toBean(requestParam,UserDO.class),wrapper);
+
+        String username = UserContext.getUsername();
+        if (username.equals(requestParam.getUsername())) {
+            LambdaUpdateWrapper<UserDO> wrapper = Wrappers.lambdaUpdate(UserDO.class).eq(UserDO::getUsername, requestParam.getUsername());
+            baseMapper.update(BeanUtil.toBean(requestParam, UserDO.class), wrapper);
+        }else {
+            throw new ClientException("登录用户与当前用户不一致");
+        }
     }
 
     @Override
@@ -111,7 +117,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
                 .sign();
 //        String uuid = UUID.randomUUID().toString();
         stringRedisTemplate.opsForHash().put("login_"+requestParam.getUsername(),token,JSON.toJSONString(userDO));
-        stringRedisTemplate.expire("login_"+requestParam.getUsername(),30, TimeUnit.MINUTES);
+        stringRedisTemplate.expire("login_"+requestParam.getUsername(),30, TimeUnit.DAYS);
         return new UserLoginRespDTO(token);
     }
 
