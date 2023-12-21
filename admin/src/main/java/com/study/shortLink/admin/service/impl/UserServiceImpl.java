@@ -128,7 +128,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
     }
 
     @Override
-    public void logout(String username, String token) {
+    public void logout() {
+        String token = UserContext.getToken();
+        String username = UserContext.getUsername();
         if (checkLogin(username, token)){
             stringRedisTemplate.delete("login_" + username);
             return;
