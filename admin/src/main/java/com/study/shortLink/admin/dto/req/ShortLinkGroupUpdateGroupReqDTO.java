@@ -16,8 +16,5 @@ public class ShortLinkGroupUpdateGroupReqDTO {
      * 分组名
      */
     private String name;
-    /**
-     * 分组排序
-     */
-    private Integer sortOrder;
+
 }

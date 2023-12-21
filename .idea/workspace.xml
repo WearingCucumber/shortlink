@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接后管项目 添加分组修改功能">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接后管项目 修改注销功能注解 参数爆红">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/req/ShortLinkGroupSortGroupReqDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/req/ShortLinkGroupUpdateGroupReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/req/ShortLinkGroupUpdateGroupReqDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="8bf50ab561dc7b7c6249ed91b02d6b5d300fd48a" />
+        <entry key="$PROJECT_DIR$" value="f5dc8f3de76997e4abe31715c2594971106ce9b3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,6 +136,7 @@
       <list>
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
+        <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +154,7 @@
       <workItem from="1702962780473" duration="15321000" />
       <workItem from="1703038697653" duration="19318000" />
       <workItem from="1703094859493" duration="163000" />
-      <workItem from="1703136401626" duration="2943000" />
+      <workItem from="1703136401626" duration="7636000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -383,11 +388,30 @@
       <option name="project" value="LOCAL" />
       <updated>1703139130858</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feature: 短链接后管项目 修改注销功能注解 参数爆红">
+      <option name="closed" value="true" />
+      <created>1703139367744</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1703139367744</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -413,7 +437,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="开发短链接网关项目初始化" />
     <MESSAGE value="开发全局异常拦截器" />
     <MESSAGE value="开发用户自定义异常码" />
     <MESSAGE value="基本框架搭建" />
@@ -438,6 +461,7 @@
     <MESSAGE value="feature: 短链接后管项目 修改用户注销功能 通过UserContext获取用户信息上下文" />
     <MESSAGE value="feature: 短链接后管项目 修改用户上下文工具类  将token封装到用户上下文中" />
     <MESSAGE value="feature: 短链接后管项目 添加分组修改功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接后管项目 添加分组修改功能" />
+    <MESSAGE value="feature: 短链接后管项目 修改注销功能注解 参数爆红" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接后管项目 修改注销功能注解 参数爆红" />
   </component>
 </project>
