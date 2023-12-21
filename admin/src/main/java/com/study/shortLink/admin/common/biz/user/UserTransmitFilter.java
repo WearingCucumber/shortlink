@@ -59,6 +59,7 @@ public class UserTransmitFilter implements Filter {
                     return;
                 }
                 UserInfoDTO userInfoDTO = JSON.parseObject(userInfoJsonStr.toString(), UserInfoDTO.class);
+                userInfoDTO.setToken(token);
                 UserContext.setUser(userInfoDTO);
             }
         }
