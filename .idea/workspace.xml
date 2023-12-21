@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接后管项目 修改添加分组逻辑： 同一用户不能创建两个相同名称的组">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/req/ShortLinkGroupUpdateGroupReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接后管项目 添加分组修改功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserTransmitFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserTransmitFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +149,7 @@
       <workItem from="1702962780473" duration="15321000" />
       <workItem from="1703038697653" duration="19318000" />
       <workItem from="1703094859493" duration="163000" />
-      <workItem from="1703136401626" duration="2204000" />
+      <workItem from="1703136401626" duration="2943000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -369,7 +359,31 @@
       <option name="project" value="LOCAL" />
       <updated>1703094977898</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feature: 短链接后管项目 修改用户注销功能 通过UserContext获取用户信息上下文">
+      <option name="closed" value="true" />
+      <created>1703138993895</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1703138993895</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feature: 短链接后管项目 修改用户上下文工具类  将token封装到用户上下文中">
+      <option name="closed" value="true" />
+      <created>1703139097540</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1703139097540</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feature: 短链接后管项目 添加分组修改功能">
+      <option name="closed" value="true" />
+      <created>1703139130858</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1703139130858</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,9 +413,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="配置git上传 忽略配置文件" />
-    <MESSAGE value="开发公共依赖以及多个模块定义" />
-    <MESSAGE value="开发短链接中心项目初始化" />
     <MESSAGE value="开发短链接网关项目初始化" />
     <MESSAGE value="开发全局异常拦截器" />
     <MESSAGE value="开发用户自定义异常码" />
@@ -424,6 +435,9 @@
     <MESSAGE value="feature: 开发短链接后管系统 用户登陆时间修改为30天" />
     <MESSAGE value="feature: 开发短链接后管系统 用户登录信息上下文封装" />
     <MESSAGE value="feature: 短链接后管项目 修改添加分组逻辑： 同一用户不能创建两个相同名称的组" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接后管项目 修改添加分组逻辑： 同一用户不能创建两个相同名称的组" />
+    <MESSAGE value="feature: 短链接后管项目 修改用户注销功能 通过UserContext获取用户信息上下文" />
+    <MESSAGE value="feature: 短链接后管项目 修改用户上下文工具类  将token封装到用户上下文中" />
+    <MESSAGE value="feature: 短链接后管项目 添加分组修改功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接后管项目 添加分组修改功能" />
   </component>
 </project>

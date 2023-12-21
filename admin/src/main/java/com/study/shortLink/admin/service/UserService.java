@@ -55,8 +55,6 @@ public interface UserService extends IService<UserDO> {
 
         /**
          * 退出登录
-         * @param username
-         * @param token
          */
 
         void logout();
