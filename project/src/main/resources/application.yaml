@@ -1,2 +1,15 @@
 server:
   port: 8001
+
+
+spring:
+  datasource:
+    # ShardingSphere 对 Driver 自定义，实现分库分表等隐藏逻辑
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    # ShardingSphere 配置文件路径
+    url: jdbc:shardingsphere:classpath:shardingSphere-config.yml
+  data:
+    redis:
+      host: 192.168.70.128
+      port: 6379
+      password: 123456
