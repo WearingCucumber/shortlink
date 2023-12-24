@@ -27,7 +27,7 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implemen
     @Override
     public void saveGroup(String groupName) {
         String username = UserContext.getUsername();
-        /**
+        /*
          * 此处用来判断当前用户下是否有相同的组名称了  如果有则 报错
          */
         LambdaQueryWrapper<GroupDO> hasSameGroupNameDo = Wrappers.lambdaQuery(GroupDO.class)

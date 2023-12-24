@@ -57,17 +57,17 @@ public class ShortLinkDO extends BaseDO {
     /**
      * 启用标识 0:启用 1:未启用
      */
-    private int enableStatus;
+    private Integer enableStatus;
 
     /**
      * 创建类型 0:接口创建 1:平台创建
      */
-    private int createType;
+    private Integer createType;
 
     /**
      * 有效期类型 0:永久有效 1:自定义
      */
-    private int validDateType;
+    private Integer validDateType;
 
     /**
      * 有效期
