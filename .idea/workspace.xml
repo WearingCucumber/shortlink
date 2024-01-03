@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接分表">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/ShortLinkGroupCountQueryReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkGroupCountQueryRespDTO.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 添加更具分组标识查询对应短链接数量">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/ShortLinkGroupCountQueryRespDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/resp/ShortLinkGroupRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/resp/ShortLinkGroupRespDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/database/BaseDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/database/BaseDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/ShortLinkDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/ShortLinkDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/test/java/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,36 +63,36 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17normal",
-    "last_opened_file_path": "C:/Users/lzp/Desktop/shortLink/admin/src/main/java/com/study/shortLink/admin/remote/dto",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.27471265",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17normal&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lzp/Desktop/shortLink/admin/src/main/java/com/study/shortLink/admin/remote/dto&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -108,6 +105,7 @@
       <recent name="C:\Users\lzp\Desktop\shortLink\gateway\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.study.shortLink.admin.remote.dto" />
       <recent name="com.study.shortLink.admin.config" />
       <recent name="com.study.shortLink.project.common.database" />
       <recent name="com.study.shortLink.admin.dto.req" />
@@ -120,7 +118,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="Spring Boot.ShortLinkAdminApplication">
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test" />
       <module name="shortLink-project" />
@@ -169,9 +167,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.test" />
-        <item itemvalue="Spring Boot.ShortLinkApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
+        <item itemvalue="Spring Boot.ShortLinkApplication" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
       </list>
@@ -193,7 +191,10 @@
       <workItem from="1703094859493" duration="163000" />
       <workItem from="1703136401626" duration="25836000" />
       <workItem from="1703322596270" duration="1285000" />
-      <workItem from="1703387262159" duration="20391000" />
+      <workItem from="1703387262159" duration="21926000" />
+      <workItem from="1703516365782" duration="1240000" />
+      <workItem from="1703584998961" duration="652000" />
+      <workItem from="1704260462066" duration="4472000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -523,7 +524,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703428038618</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="feature: 修改字段属性使mybatis-plus查询时不会自动带入">
+      <option name="closed" value="true" />
+      <created>1703436932327</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1703436932327</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feature: 添加更具分组标识查询对应短链接数量">
+      <option name="closed" value="true" />
+      <created>1703436963154</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1703436963154</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,8 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 上传一些杂项" />
-    <MESSAGE value="feature: 初始化短链接分组功能代码" />
     <MESSAGE value="feature: 开发数据库持久层对象基础属性" />
     <MESSAGE value="feature: 开发短链接后管分组新增功能" />
     <MESSAGE value="feature: 开发短链接分组排序字段" />
@@ -589,17 +604,33 @@
     <MESSAGE value="feature: 添加后管系统调用中台系统API" />
     <MESSAGE value="feature: 优化用户注册重复提示报错" />
     <MESSAGE value="feature: 短链接分表" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接分表" />
+    <MESSAGE value="feature: 修改字段属性使mybatis-plus查询时不会自动带入" />
+    <MESSAGE value="feature: 添加更具分组标识查询对应短链接数量" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 添加更具分组标识查询对应短链接数量" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java</url>
+          <line>37</line>
+          <properties class="com.study.shortLink.project.controller.ShortLinkController" method="listGroupShortLinkCount">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

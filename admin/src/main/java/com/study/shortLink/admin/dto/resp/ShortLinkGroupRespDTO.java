@@ -26,4 +26,9 @@ public class ShortLinkGroupRespDTO {
      */
     private Integer sortOrder;
 
+    /**
+     * 组内短链接数量
+     */
+    private Integer shortLinkCount;
+
 }

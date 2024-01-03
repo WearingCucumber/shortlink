@@ -5,12 +5,15 @@ import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.study.shortLink.admin.common.convention.result.Result;
+import com.study.shortLink.admin.remote.dto.ShortLinkGroupCountQueryRespDTO;
 import com.study.shortLink.admin.remote.dto.req.ShortLinkCreateReqDTO;
 import com.study.shortLink.admin.remote.dto.req.ShortLinkPageReqDTO;
 import com.study.shortLink.admin.remote.dto.resp.ShortLinkCreateRespDTO;
 import com.study.shortLink.admin.remote.dto.resp.ShortLinkPageRespDTO;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -44,4 +47,19 @@ public interface ShortLinkRemoteService {
         return JSON.parseObject(result, new TypeReference<Result<ShortLinkCreateRespDTO>>() {
         });
     }
+
+    /**
+     * 根据分组标识查询组中短链接数量
+     * @param requestParam 分组标识gid
+     * @return
+     */
+    default  Result<List<ShortLinkGroupCountQueryRespDTO>> listGroupShortLinkCount(@RequestParam("requestParam") List<String> requestParam){
+        Map<String,Object> requestMap = new HashMap<>();
+        requestMap.put("requestParam",requestParam);
+        String result = HttpUtil.get("http://127.0.0.1:8001/api/short-link/v1/count", requestMap);
+        return JSON.parseObject(result, new TypeReference<Result<List<ShortLinkGroupCountQueryRespDTO>>>() {
+        });
+
+    }
+
 }
