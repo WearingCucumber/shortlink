@@ -16,6 +16,7 @@ import com.study.shortLink.admin.dto.req.UserRegisterReqDTO;
 import com.study.shortLink.admin.dto.req.UserUpdateReqDTO;
 import com.study.shortLink.admin.dto.resp.UserLoginRespDTO;
 import com.study.shortLink.admin.dto.resp.UserRespDTO;
+import com.study.shortLink.admin.service.GroupService;
 import com.study.shortLink.admin.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.redisson.api.RBloomFilter;
@@ -36,6 +37,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
     private final RBloomFilter<String> userRegisterCachePenetrationBloomFilter;
     private final RedissonClient redissonClient;
     private final StringRedisTemplate stringRedisTemplate;
+    private final GroupService groupService;
 
     public UserRespDTO getUserByUsername(String username) {
         LambdaQueryWrapper<UserDO> queryWrapper = Wrappers.lambdaQuery(UserDO.class)
@@ -73,12 +75,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
                     throw new ClientException(USER_EXIST);
                 }
                 userRegisterCachePenetrationBloomFilter.add(requestParam.getUsername());
+                groupService.addGroupAfterUserRegister(requestParam.getUsername());
                 return;
             }
             throw new ClientException(USER_NAME_EXIST);
         } finally {
             lock.unlock();
         }
+
+
 
     }
 

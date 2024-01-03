@@ -57,6 +57,8 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implemen
         baseMapper.insert(groupDO);
     }
 
+
+
     @Override
     public List<ShortLinkGroupRespDTO> listGroup() {
         String username = UserContext.getUsername();
@@ -115,6 +117,17 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implemen
             baseMapper.update(groupDO, updateWrapper);
         });
 
+    }
+
+    @Override
+    public void addGroupAfterUserRegister(String username) {
+        GroupDO groupDO = GroupDO.builder()
+                .username(username)
+                .name("默认分组")
+                .gid(RandomStringGenerator.generateRandom())
+                .sortOrder(0)
+                .build();
+        baseMapper.insert(groupDO);
     }
 
     private boolean hasGid(String gid) {

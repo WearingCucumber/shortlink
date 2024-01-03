@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 添加更具分组标识查询对应短链接数量">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/ShortLinkGroupCountQueryRespDTO.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接分组列表查询返回短链接数量">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/resp/ShortLinkGroupRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/resp/ShortLinkGroupRespDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,8 +164,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
         <item itemvalue="Spring Boot.ShortLinkApplication" />
+        <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
         <item itemvalue="Application.test" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
@@ -194,7 +191,7 @@
       <workItem from="1703387262159" duration="21926000" />
       <workItem from="1703516365782" duration="1240000" />
       <workItem from="1703584998961" duration="652000" />
-      <workItem from="1704260462066" duration="4472000" />
+      <workItem from="1704260462066" duration="5555000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -540,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703436963154</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="feature: 短链接分组列表查询返回短链接数量">
+      <option name="closed" value="true" />
+      <created>1704265191547</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1704265191547</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 开发数据库持久层对象基础属性" />
     <MESSAGE value="feature: 开发短链接后管分组新增功能" />
     <MESSAGE value="feature: 开发短链接分组排序字段" />
     <MESSAGE value="feature: 开发短链接查询分组集合" />
@@ -606,7 +610,8 @@
     <MESSAGE value="feature: 短链接分表" />
     <MESSAGE value="feature: 修改字段属性使mybatis-plus查询时不会自动带入" />
     <MESSAGE value="feature: 添加更具分组标识查询对应短链接数量" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 添加更具分组标识查询对应短链接数量" />
+    <MESSAGE value="feature: 短链接分组列表查询返回短链接数量" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接分组列表查询返回短链接数量" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
