@@ -5,12 +5,12 @@ import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.study.shortLink.admin.common.convention.result.Result;
-import com.study.shortLink.admin.remote.dto.ShortLinkGroupCountQueryRespDTO;
 import com.study.shortLink.admin.remote.dto.req.ShortLinkCreateReqDTO;
 import com.study.shortLink.admin.remote.dto.req.ShortLinkPageReqDTO;
+import com.study.shortLink.admin.remote.dto.req.ShortLinkUpdateReqDTO;
 import com.study.shortLink.admin.remote.dto.resp.ShortLinkCreateRespDTO;
+import com.study.shortLink.admin.remote.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.study.shortLink.admin.remote.dto.resp.ShortLinkPageRespDTO;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 import java.util.List;
@@ -53,7 +53,7 @@ public interface ShortLinkRemoteService {
      * @param requestParam 分组标识gid
      * @return
      */
-    default  Result<List<ShortLinkGroupCountQueryRespDTO>> listGroupShortLinkCount(@RequestParam("requestParam") List<String> requestParam){
+    default  Result<List<ShortLinkGroupCountQueryRespDTO>> listGroupShortLinkCount(List<String> requestParam){
         Map<String,Object> requestMap = new HashMap<>();
         requestMap.put("requestParam",requestParam);
         String result = HttpUtil.get("http://127.0.0.1:8001/api/short-link/v1/count", requestMap);
@@ -62,4 +62,12 @@ public interface ShortLinkRemoteService {
 
     }
 
+    /**
+     * 修改短链接
+     * @param requestParam
+     */
+    default void updateShortLink(ShortLinkUpdateReqDTO requestParam){
+        String jsonBody = JSON.toJSON(requestParam).toString();
+        HttpUtil.post("http://127.0.0.1:8001/api/short-link/v1/update", jsonBody);
+    }
 }

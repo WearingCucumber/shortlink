@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 全段传递有效期时间序列化">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/enums/ValiDateTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/ShortLinkUpdateReqDTO.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接修改功能">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/ShortLinkUpdateReqDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/ShortLinkGroupCountQueryRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkGroupCountQueryRespDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/ShortLinkDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/ShortLinkDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +106,7 @@
       <recent name="C:\Users\lzp\Desktop\shortLink\gateway\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.study.shortLink.admin.remote.dto.req" />
       <recent name="com.study.shortLink.admin.remote.dto" />
       <recent name="com.study.shortLink.admin.config" />
       <recent name="com.study.shortLink.project.common.database" />
@@ -196,7 +197,7 @@
       <workItem from="1703516365782" duration="1240000" />
       <workItem from="1703584998961" duration="652000" />
       <workItem from="1704260462066" duration="8085000" />
-      <workItem from="1704458620012" duration="9037000" />
+      <workItem from="1704458620012" duration="9484000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -566,7 +567,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704458884328</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="feature: 短链接修改功能">
+      <option name="closed" value="true" />
+      <created>1704476740598</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1704476740598</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +616,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 开发短链接查询分组集合" />
     <MESSAGE value="feature: 更改用户登录使用的token 原：uuid 现：使用JWT" />
     <MESSAGE value="feature: 开发短链接后管系统 用户登陆时间修改为30天" />
     <MESSAGE value="feature: 开发短链接后管系统 用户登录信息上下文封装" />
@@ -632,7 +640,8 @@
     <MESSAGE value="feature: 短链接分组列表查询返回短链接数量" />
     <MESSAGE value="feature: 创建用户后默认创建对应的默认分组" />
     <MESSAGE value="feature: 全段传递有效期时间序列化" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 全段传递有效期时间序列化" />
+    <MESSAGE value="feature: 短链接修改功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接修改功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,4 +1,4 @@
-package com.study.shortLink.admin.remote.dto;
+package com.study.shortLink.admin.remote.dto.resp;
 
 import lombok.Data;
 

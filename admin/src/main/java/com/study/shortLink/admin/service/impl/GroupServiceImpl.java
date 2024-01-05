@@ -14,7 +14,7 @@ import com.study.shortLink.admin.dto.req.ShortLinkGroupSortGroupReqDTO;
 import com.study.shortLink.admin.dto.req.ShortLinkGroupUpdateGroupReqDTO;
 import com.study.shortLink.admin.dto.resp.ShortLinkGroupRespDTO;
 import com.study.shortLink.admin.remote.ShortLinkRemoteService;
-import com.study.shortLink.admin.remote.dto.ShortLinkGroupCountQueryRespDTO;
+import com.study.shortLink.admin.remote.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.study.shortLink.admin.service.GroupService;
 import com.study.shortLink.admin.toolkit.RandomStringGenerator;
 import lombok.RequiredArgsConstructor;
