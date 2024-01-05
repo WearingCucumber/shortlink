@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接修改功能">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/ShortLinkUpdateReqDTO.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接后管对接短链接修改功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/ShortLinkGroupCountQueryRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkGroupCountQueryRespDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +192,7 @@
       <workItem from="1703516365782" duration="1240000" />
       <workItem from="1703584998961" duration="652000" />
       <workItem from="1704260462066" duration="8085000" />
-      <workItem from="1704458620012" duration="9484000" />
+      <workItem from="1704458620012" duration="10129000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -575,7 +570,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704476740598</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="feature: 更改短链接修改请求为post">
+      <option name="closed" value="true" />
+      <created>1704477184465</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1704477184465</updated>
+    </task>
+    <task id="LOCAL-00049" summary="feature: 短链接后管对接短链接修改功能">
+      <option name="closed" value="true" />
+      <created>1704477206399</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1704477206399</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,8 +627,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 更改用户登录使用的token 原：uuid 现：使用JWT" />
-    <MESSAGE value="feature: 开发短链接后管系统 用户登陆时间修改为30天" />
     <MESSAGE value="feature: 开发短链接后管系统 用户登录信息上下文封装" />
     <MESSAGE value="feature: 短链接后管项目 修改添加分组逻辑： 同一用户不能创建两个相同名称的组" />
     <MESSAGE value="feature: 短链接后管项目 修改用户注销功能 通过UserContext获取用户信息上下文" />
@@ -641,7 +650,9 @@
     <MESSAGE value="feature: 创建用户后默认创建对应的默认分组" />
     <MESSAGE value="feature: 全段传递有效期时间序列化" />
     <MESSAGE value="feature: 短链接修改功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接修改功能" />
+    <MESSAGE value="feature: 更改短链接修改请求为post" />
+    <MESSAGE value="feature: 短链接后管对接短链接修改功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接后管对接短链接修改功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

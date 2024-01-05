@@ -125,10 +125,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
                         .eq(ShortLinkDO::getFullShortUrl, requestParam.getFullShortUrl())
                         .eq(ShortLinkDO::getDelFlag, 0)
                         .eq(ShortLinkDO::getEnableStatus, 0)
-                        //这里用来判断有效期类型是否是永久有效 如果是的话则直接设置有效期时间为null // 使用set似乎无效
-                        .set(Objects.equals(requestParam.getCreateType(),PERMANENT.getType()),ShortLinkDO::getValidDate,null);
-                ShortLinkDO shortLinkDO = BeanUtil.copyProperties(requestParam, ShortLinkDO.class);
-                baseMapper.update(shortLinkDO,updateWrapper);
+                        //这里用来判断有效期类型是否是永久有效 如果是的话则直接设置有效期时间为null
+                        .set(Objects.equals(requestParam.getValidDateType(),PERMANENT.getType()),ShortLinkDO::getValidDate,null);
+                baseMapper.update(shortLinkDo,updateWrapper);
             }else {
                 LambdaUpdateWrapper<ShortLinkDO> updateWrapper = Wrappers.lambdaUpdate(ShortLinkDO.class)
                         .eq(ShortLinkDO::getGid, requestParam.getOriginGid())
