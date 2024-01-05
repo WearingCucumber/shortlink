@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接分组列表查询返回短链接数量">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 创建用户后默认创建对应的默认分组">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/GroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/ShortLinkCreateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/ShortLinkCreateReqDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +189,8 @@
       <workItem from="1703387262159" duration="21926000" />
       <workItem from="1703516365782" duration="1240000" />
       <workItem from="1703584998961" duration="652000" />
-      <workItem from="1704260462066" duration="5555000" />
+      <workItem from="1704260462066" duration="8085000" />
+      <workItem from="1704458620012" duration="202000" />
     </task>
     <task id="LOCAL-00001" summary="配置git上传 忽略配置文件">
       <option name="closed" value="true" />
@@ -545,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704265191547</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="feature: 创建用户后默认创建对应的默认分组">
+      <option name="closed" value="true" />
+      <created>1704266177319</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1704266177319</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 开发短链接后管分组新增功能" />
     <MESSAGE value="feature: 开发短链接分组排序字段" />
     <MESSAGE value="feature: 开发短链接查询分组集合" />
     <MESSAGE value="feature: 更改用户登录使用的token 原：uuid 现：使用JWT" />
@@ -611,7 +617,8 @@
     <MESSAGE value="feature: 修改字段属性使mybatis-plus查询时不会自动带入" />
     <MESSAGE value="feature: 添加更具分组标识查询对应短链接数量" />
     <MESSAGE value="feature: 短链接分组列表查询返回短链接数量" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接分组列表查询返回短链接数量" />
+    <MESSAGE value="feature: 创建用户后默认创建对应的默认分组" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 创建用户后默认创建对应的默认分组" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
