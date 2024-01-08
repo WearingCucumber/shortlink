@@ -10,9 +10,12 @@ import com.study.shortLink.project.dto.resp.ShortLinkCreateRespDTO;
 import com.study.shortLink.project.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.study.shortLink.project.dto.resp.ShortLinkPageRespDTO;
 import com.study.shortLink.project.service.ShortLinkService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -20,8 +23,18 @@ import java.util.List;
  */
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin
 public class ShortLinkController {
     private final ShortLinkService shortLinkService;
+
+
+
+    @GetMapping("/{short_url}")
+    public void redisRectUrl(@PathVariable("short_url")String short_url , HttpServletRequest request , HttpServletResponse response) throws IOException {
+        shortLinkService.redisRectUrl(short_url , request , response);
+        return;
+    }
+
 
     /**
      * 创建短链接
