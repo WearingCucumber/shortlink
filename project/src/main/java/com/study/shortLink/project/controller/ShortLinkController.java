@@ -27,7 +27,13 @@ public class ShortLinkController {
     private final ShortLinkService shortLinkService;
 
 
-
+    /**
+     * 短链接跳转原始链接
+     * @param short_url
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     @GetMapping("/{short_url}")
     public void redisRectUrl(@PathVariable("short_url")String short_url , HttpServletRequest request , HttpServletResponse response) throws IOException {
         shortLinkService.redirectUrl(short_url , request , response);
