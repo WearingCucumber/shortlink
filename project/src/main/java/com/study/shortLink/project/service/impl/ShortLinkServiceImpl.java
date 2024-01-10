@@ -27,6 +27,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.redisson.api.RBloomFilter;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
@@ -98,7 +102,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
             ShortLinkGotoDO shortLinkGotoDO = shortLinkGotoMapper.selectOne(queryWrapper);
             if (shortLinkGotoDO == null) {
                 //这里进行风控
-                stringRedisTemplate.opsForValue().set(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl),"-",30, TimeUnit.MINUTES);
+                stringRedisTemplate.opsForValue().set(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl), "-", 30, TimeUnit.MINUTES);
                 response.sendRedirect("/page/notfound");
                 return;
             }
@@ -109,7 +113,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
                     .eq(ShortLinkDO::getDelFlag, 0);
             shortLinkDO = baseMapper.selectOne(shortLinkDOQueryWrapper);
             if (shortLinkDO != null) {
-                if (shortLinkDO.getValidDate()!=null&&shortLinkDO.getValidDate().before(new Date())){
+                if (shortLinkDO.getValidDate() != null && shortLinkDO.getValidDate().before(new Date())) {
                     response.sendRedirect("/page/notfound");
                     return;
                 }
@@ -119,7 +123,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
                         LinkUtil.getLinkCacheValidDate(shortLinkDO.getValidDate()),
                         TimeUnit.MILLISECONDS);
                 response.sendRedirect(shortLinkDO.getOriginUrl());
-            }else {
+            } else {
                 throw new ClientException("该短链接不存在");
             }
         } finally {
@@ -137,6 +141,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
         ShortLinkDO shortLinkDO = BeanUtil.toBean(requestParam, ShortLinkDO.class);
         shortLinkDO.setFullShortUrl(fullShortUrl);
         shortLinkDO.setShortUri(shortLinkSuffix);
+        shortLinkDO.setFavicon(getIcon(requestParam.getOriginUrl()));
         shortLinkDO.setEnableStatus(0);
         try {
             baseMapper.insert(shortLinkDO);
@@ -161,7 +166,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
          * 缓存预热
          */
         stringRedisTemplate.opsForValue().set(
-                String.format(GOTO_SHORT_LINK_KEY,shortLinkSuffix),requestParam.getOriginUrl(),
+                String.format(GOTO_SHORT_LINK_KEY, shortLinkSuffix), requestParam.getOriginUrl(),
                 LinkUtil.getLinkCacheValidDate(requestParam.getValidDate()),
                 TimeUnit.MILLISECONDS
         );
@@ -272,4 +277,28 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
         }
         return shortUri;
     }
+
+    private static String getIcon(String url) {
+        try {
+            // 使用Jsoup从URL获取HTML文档
+            Document document = Jsoup.connect(url).get();
+
+            // 查找所有的link元素
+            Elements linkElements = document.select("link");
+
+            // 遍历link元素，查找包含图标信息的元素
+            for (Element linkElement : linkElements) {
+                String rel = linkElement.attr("rel");
+                if (rel.contains("icon")) {
+                    // 获取图标的URL
+                    String iconUrl = linkElement.attr("href");
+                    return iconUrl;
+                }
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return null;
+    }
+
 }
