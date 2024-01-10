@@ -22,6 +22,7 @@ import com.study.shortLink.project.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.study.shortLink.project.dto.resp.ShortLinkPageRespDTO;
 import com.study.shortLink.project.service.ShortLinkService;
 import com.study.shortLink.project.toolkit.HashUtil;
+import com.study.shortLink.project.toolkit.LinkUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -103,8 +104,14 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
                     .eq(ShortLinkDO::getDelFlag, 0);
             shortLinkDO = baseMapper.selectOne(shortLinkDOQueryWrapper);
             if (shortLinkDO != null) {
-                stringRedisTemplate.opsForValue().set(String.format(GOTO_SHORT_LINK_KEY, shortUrl), shortLinkDO.getOriginUrl());
+                stringRedisTemplate.opsForValue().set(
+                        String.format(GOTO_SHORT_LINK_KEY, shortUrl),
+                        shortLinkDO.getOriginUrl(),
+                        LinkUtil.getLinkCacheValidDate(shortLinkDO.getValidDate()),
+                        TimeUnit.MILLISECONDS);
                 response.sendRedirect(shortLinkDO.getOriginUrl());
+            }else {
+                throw new ClientException("该短链接不存在");
             }
         } finally {
             lock.unlock();
@@ -136,11 +143,19 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
             if (count != 0) {
             }
           */
-            log.warn("短链接：{}", "重复入库", fullShortUrl);
+            log.warn("短链接:{} 重复入库", fullShortUrl);
             shortUriCreateCachePenetrationBloomFilter.add(fullShortUrl);
             throw new ServiceException("短链接生成重复");
         }
         shortUriCreateCachePenetrationBloomFilter.add(fullShortUrl);
+        /**
+         * 缓存预热
+         */
+        stringRedisTemplate.opsForValue().set(
+                String.format(GOTO_SHORT_LINK_KEY,shortLinkSuffix),requestParam.getOriginUrl(),
+                LinkUtil.getLinkCacheValidDate(requestParam.getValidDate()),
+                TimeUnit.MILLISECONDS
+        );
         return ShortLinkCreateRespDTO.builder()
                 .fullShortUrl(shortLinkDO.getFullShortUrl())
                 .originUrl(requestParam.getOriginUrl())
