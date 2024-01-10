@@ -67,12 +67,15 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
          */
         //这里先判断布隆过滤器中是否存在该链接
         if (!shortUriCreateCachePenetrationBloomFilter.contains(fullShortUrl)) {
-            throw new ClientException("短链接不存在");
+            response.sendRedirect("/page/notfound");
+            return;
         }
         //这里防止布隆过滤器误判导致多个同一个不存在的短链接请求打进来 因为同一个请求既然布隆过滤器误判那么后面同样请求都会误判  这里加一个 isnull可以来防止这种情况发生
         String gotoIsNullShortLink = stringRedisTemplate.opsForValue().get(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl));
-        if (StringUtils.isNotBlank(gotoIsNullShortLink))
+        if (StringUtils.isNotBlank(gotoIsNullShortLink)) {
+            response.sendRedirect("/page/notfound");
             return;
+        }
         /**
          * 防止缓存击穿
          */
@@ -96,6 +99,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
             if (shortLinkGotoDO == null) {
                 //这里进行风控
                 stringRedisTemplate.opsForValue().set(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl),"-",30, TimeUnit.MINUTES);
+                response.sendRedirect("/page/notfound");
                 return;
             }
             LambdaQueryWrapper<ShortLinkDO> shortLinkDOQueryWrapper = Wrappers.lambdaQuery(ShortLinkDO.class)
@@ -106,7 +110,8 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
             shortLinkDO = baseMapper.selectOne(shortLinkDOQueryWrapper);
             if (shortLinkDO != null) {
                 if (shortLinkDO.getValidDate()!=null&&shortLinkDO.getValidDate().before(new Date())){
-                    throw new ClientException("短链接已经过期");
+                    response.sendRedirect("/page/notfound");
+                    return;
                 }
                 stringRedisTemplate.opsForValue().set(
                         String.format(GOTO_SHORT_LINK_KEY, shortUrl),

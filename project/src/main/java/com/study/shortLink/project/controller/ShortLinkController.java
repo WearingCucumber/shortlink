@@ -23,7 +23,6 @@ import java.util.List;
  */
 @RequiredArgsConstructor
 @RestController
-@CrossOrigin
 public class ShortLinkController {
     private final ShortLinkService shortLinkService;
 
