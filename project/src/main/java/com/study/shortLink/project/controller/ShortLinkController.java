@@ -31,7 +31,7 @@ public class ShortLinkController {
 
     @GetMapping("/{short_url}")
     public void redisRectUrl(@PathVariable("short_url")String short_url , HttpServletRequest request , HttpServletResponse response) throws IOException {
-        shortLinkService.redisRectUrl(short_url , request , response);
+        shortLinkService.redirectUrl(short_url , request , response);
         return;
     }
 

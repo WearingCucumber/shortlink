@@ -20,6 +20,14 @@ import java.util.List;
  */
 public interface ShortLinkService extends IService<ShortLinkDO> {
     /**
+     * 跳转短链接
+     * @param shortUrl
+     * @param request
+     * @param response
+     */
+    void redirectUrl(String shortUrl, HttpServletRequest request, HttpServletResponse response) throws IOException;
+
+    /**
      * 创建短链接
      * @param requestParam 短链接创建信息
      * @return
@@ -47,11 +55,5 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
      */
     void updateShortLink(ShortLinkUpdateReqDTO requestParam);
 
-    /**
-     * 跳转短链接
-     * @param shortUrl
-     * @param request
-     * @param response
-     */
-    void redisRectUrl(String shortUrl, HttpServletRequest request, HttpServletResponse response) throws IOException;
+
 }
