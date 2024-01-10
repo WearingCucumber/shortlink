@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 优化短链接跳转功能的缓存穿透布隆过滤器误判的解决方案">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/constant/ShortLinkConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/toolkit/LinkUtil.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接创建时进行缓存预热">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
     </list>
@@ -204,15 +202,7 @@
       <workItem from="1704458620012" duration="10621000" />
       <workItem from="1704608946112" duration="6647000" />
       <workItem from="1704710496697" duration="5103000" />
-      <workItem from="1704905138306" duration="5645000" />
-    </task>
-    <task id="LOCAL-00006" summary="开发全局异常拦截器">
-      <option name="closed" value="true" />
-      <created>1702965487760</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1702965487760</updated>
+      <workItem from="1704905138306" duration="6692000" />
     </task>
     <task id="LOCAL-00007" summary="开发用户自定义异常码">
       <option name="closed" value="true" />
@@ -598,7 +588,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704909553714</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="feature: 短链接创建时进行缓存预热">
+      <option name="closed" value="true" />
+      <created>1704911173220</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1704911173220</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +637,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 短链接后管项目 修改注销功能注解 参数爆红" />
     <MESSAGE value="feature: 短链接后管项目 添加分组排序功能" />
     <MESSAGE value="refactor: 短链接后管项目 系统路径" />
     <MESSAGE value="feature: 中台项目 开发新增短链接功能" />
@@ -664,7 +661,8 @@
     <MESSAGE value="feature: 修改短链接跳转接口名称错误问题" />
     <MESSAGE value="feature: 优化短链接跳转功能开发缓存击穿和缓存穿透问题" />
     <MESSAGE value="feature: 优化短链接跳转功能的缓存穿透布隆过滤器误判的解决方案" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 优化短链接跳转功能的缓存穿透布隆过滤器误判的解决方案" />
+    <MESSAGE value="feature: 短链接创建时进行缓存预热" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接创建时进行缓存预热" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -678,6 +676,16 @@
           <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java</url>
           <line>33</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

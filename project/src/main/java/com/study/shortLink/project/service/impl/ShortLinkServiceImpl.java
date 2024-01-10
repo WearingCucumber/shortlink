@@ -36,6 +36,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -104,6 +105,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
                     .eq(ShortLinkDO::getDelFlag, 0);
             shortLinkDO = baseMapper.selectOne(shortLinkDOQueryWrapper);
             if (shortLinkDO != null) {
+                if (shortLinkDO.getValidDate()!=null&&shortLinkDO.getValidDate().before(new Date())){
+                    throw new ClientException("短链接已经过期");
+                }
                 stringRedisTemplate.opsForValue().set(
                         String.format(GOTO_SHORT_LINK_KEY, shortUrl),
                         shortLinkDO.getOriginUrl(),
