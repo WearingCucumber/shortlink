@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接修改功能 解决有效期永久情况下到期时间不为null的bug">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/ShortLinkGotoDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/ShortLinkGotoMapper.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发短链接跳转功能">
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/constant/RedisKeyConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/resources/shardingSphere-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/shardingSphere-config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/test/java/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -200,15 +197,8 @@
       <workItem from="1704260462066" duration="8085000" />
       <workItem from="1704458620012" duration="10621000" />
       <workItem from="1704608946112" duration="6647000" />
-      <workItem from="1704710496697" duration="3226000" />
-    </task>
-    <task id="LOCAL-00002" summary="配置git上传 忽略配置文件">
-      <option name="closed" value="true" />
-      <created>1702965251064</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1702965251064</updated>
+      <workItem from="1704710496697" duration="5103000" />
+      <workItem from="1704905138306" duration="2687000" />
     </task>
     <task id="LOCAL-00003" summary="开发公共依赖以及多个模块定义">
       <option name="closed" value="true" />
@@ -594,7 +584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704477877476</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="feature: 开发短链接跳转功能">
+      <option name="closed" value="true" />
+      <created>1704714002407</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1704714002407</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +633,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 短链接后管项目 修改添加分组逻辑： 同一用户不能创建两个相同名称的组" />
     <MESSAGE value="feature: 短链接后管项目 修改用户注销功能 通过UserContext获取用户信息上下文" />
     <MESSAGE value="feature: 短链接后管项目 修改用户上下文工具类  将token封装到用户上下文中" />
     <MESSAGE value="feature: 短链接后管项目 添加分组修改功能" />
@@ -660,7 +657,8 @@
     <MESSAGE value="feature: 更改短链接修改请求为post" />
     <MESSAGE value="feature: 短链接后管对接短链接修改功能" />
     <MESSAGE value="feature: 短链接修改功能 解决有效期永久情况下到期时间不为null的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接修改功能 解决有效期永久情况下到期时间不为null的bug" />
+    <MESSAGE value="feature: 开发短链接跳转功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发短链接跳转功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -674,11 +672,6 @@
           <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java</url>
           <line>33</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java</url>
-          <line>168</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
