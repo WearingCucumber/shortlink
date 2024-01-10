@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 短链接跳转添加有效期校验功能">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkNotFoundController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/resources/templates/notfound.html" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="docs:添加方法注释">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UrlTitleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/UrlTitleRemoteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/UrlTitleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/UrlTitleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/UrlTitleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +26,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -115,11 +116,11 @@
       <recent name="C:\Users\lzp\Desktop\shortLink\gateway\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.study.shortLink.admin.controller" />
       <recent name="com.study.shortLink.admin.remote.dto.req" />
       <recent name="com.study.shortLink.admin.remote.dto" />
       <recent name="com.study.shortLink.admin.config" />
       <recent name="com.study.shortLink.project.common.database" />
-      <recent name="com.study.shortLink.admin.dto.req" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -209,23 +210,7 @@
       <workItem from="1704458620012" duration="10621000" />
       <workItem from="1704608946112" duration="6647000" />
       <workItem from="1704710496697" duration="5103000" />
-      <workItem from="1704905138306" duration="7560000" />
-    </task>
-    <task id="LOCAL-00008" summary="基本框架搭建">
-      <option name="closed" value="true" />
-      <created>1702982606794</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1702982606794</updated>
-    </task>
-    <task id="LOCAL-00009" summary="feature: 提交项目忽略提交配置文件">
-      <option name="closed" value="true" />
-      <created>1703083658538</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1703083658538</updated>
+      <workItem from="1704905138306" duration="9889000" />
     </task>
     <task id="LOCAL-00010" summary="feature: 开发公共依赖以及多个模块定义">
       <option name="closed" value="true" />
@@ -603,7 +588,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704912200394</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="refactor:重构短链接不存在跳转提示页面">
+      <option name="closed" value="true" />
+      <created>1704913038936</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1704913038936</updated>
+    </task>
+    <task id="LOCAL-00058" summary="docs:添加方法注释">
+      <option name="closed" value="true" />
+      <created>1704913071757</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1704913071757</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,8 +645,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: 短链接后管项目 系统路径" />
-    <MESSAGE value="feature: 中台项目 开发新增短链接功能" />
     <MESSAGE value="feature: 短链接后官项目 添加短链接管理模块的分表功能" />
     <MESSAGE value="feature: 添加MyBatis-plus 分页插件" />
     <MESSAGE value="feature: 添加短链接分页查询功能" />
@@ -669,7 +668,9 @@
     <MESSAGE value="feature: 优化短链接跳转功能的缓存穿透布隆过滤器误判的解决方案" />
     <MESSAGE value="feature: 短链接创建时进行缓存预热" />
     <MESSAGE value="feature: 短链接跳转添加有效期校验功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 短链接跳转添加有效期校验功能" />
+    <MESSAGE value="refactor:重构短链接不存在跳转提示页面" />
+    <MESSAGE value="docs:添加方法注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs:添加方法注释" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
