@@ -38,9 +38,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
-import static com.study.shortLink.project.common.constant.RedisKeyConstant.GOTO_SHORT_LINK_KEY;
-import static com.study.shortLink.project.common.constant.RedisKeyConstant.LOCK_GOTO_SHORT_LINK_KEY;
+import static com.study.shortLink.project.common.constant.RedisKeyConstant.*;
 import static com.study.shortLink.project.common.enums.ValiDateTypeEnum.PERMANENT;
 
 /**
@@ -63,9 +63,14 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
         /**
          * 防止缓存穿透
          */
+        //这里先判断布隆过滤器中是否存在该链接
         if (!shortUriCreateCachePenetrationBloomFilter.contains(fullShortUrl)) {
             throw new ClientException("短链接不存在");
         }
+        //这里防止布隆过滤器误判导致多个同一个不存在的短链接请求打进来 因为同一个请求既然布隆过滤器误判那么后面同样请求都会误判  这里加一个 isnull可以来防止这种情况发生
+        String gotoIsNullShortLink = stringRedisTemplate.opsForValue().get(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl));
+        if (StringUtils.isNotBlank(gotoIsNullShortLink))
+            return;
         /**
          * 防止缓存击穿
          */
@@ -87,7 +92,8 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
                     .eq(ShortLinkGotoDO::getFullShortUrl, fullShortUrl);
             ShortLinkGotoDO shortLinkGotoDO = shortLinkGotoMapper.selectOne(queryWrapper);
             if (shortLinkGotoDO == null) {
-                // todo 此处应该进行风控
+                //这里进行风控
+                stringRedisTemplate.opsForValue().set(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl),"-",30, TimeUnit.MINUTES);
                 return;
             }
             LambdaQueryWrapper<ShortLinkDO> shortLinkDOQueryWrapper = Wrappers.lambdaQuery(ShortLinkDO.class)

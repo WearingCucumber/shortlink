@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发短链接跳转功能">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/constant/RedisKeyConstant.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 优化短链接跳转功能开发缓存击穿和缓存穿透问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/constant/RedisKeyConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/constant/RedisKeyConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,23 +196,7 @@
       <workItem from="1704458620012" duration="10621000" />
       <workItem from="1704608946112" duration="6647000" />
       <workItem from="1704710496697" duration="5103000" />
-      <workItem from="1704905138306" duration="2687000" />
-    </task>
-    <task id="LOCAL-00003" summary="开发公共依赖以及多个模块定义">
-      <option name="closed" value="true" />
-      <created>1702965399543</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1702965399543</updated>
-    </task>
-    <task id="LOCAL-00004" summary="开发短链接中心项目初始化">
-      <option name="closed" value="true" />
-      <created>1702965434687</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1702965434687</updated>
+      <workItem from="1704905138306" duration="4065000" />
     </task>
     <task id="LOCAL-00005" summary="开发短链接网关项目初始化">
       <option name="closed" value="true" />
@@ -592,7 +574,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704714002407</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="feature: 修改短链接跳转接口名称错误问题">
+      <option name="closed" value="true" />
+      <created>1704907857522</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1704907857522</updated>
+    </task>
+    <task id="LOCAL-00053" summary="feature: 优化短链接跳转功能开发缓存击穿和缓存穿透问题">
+      <option name="closed" value="true" />
+      <created>1704907912962</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1704907912962</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,8 +631,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 短链接后管项目 修改用户注销功能 通过UserContext获取用户信息上下文" />
-    <MESSAGE value="feature: 短链接后管项目 修改用户上下文工具类  将token封装到用户上下文中" />
     <MESSAGE value="feature: 短链接后管项目 添加分组修改功能" />
     <MESSAGE value="feature: 短链接后管项目 修改注销功能注解 参数爆红" />
     <MESSAGE value="feature: 短链接后管项目 添加分组排序功能" />
@@ -658,7 +654,9 @@
     <MESSAGE value="feature: 短链接后管对接短链接修改功能" />
     <MESSAGE value="feature: 短链接修改功能 解决有效期永久情况下到期时间不为null的bug" />
     <MESSAGE value="feature: 开发短链接跳转功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发短链接跳转功能" />
+    <MESSAGE value="feature: 修改短链接跳转接口名称错误问题" />
+    <MESSAGE value="feature: 优化短链接跳转功能开发缓存击穿和缓存穿透问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 优化短链接跳转功能开发缓存击穿和缓存穿透问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
