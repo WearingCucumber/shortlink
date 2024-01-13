@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature:开发短链接创建时获取原始网站图标URL">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/RecycleBinSaveReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/RecycleBinController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/RecycleBinSaveReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/RecycleBinService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/RecycleBinServiceImpl.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature:开发短链接回收站 添加回收站功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/ShortLinkMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/resources/templates/notfound.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/templates/notfound.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shortlink开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/shortlink开发文档.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,15 +232,7 @@
       <workItem from="1704710496697" duration="5103000" />
       <workItem from="1704905138306" duration="11254000" />
       <workItem from="1705072458285" duration="271000" />
-      <workItem from="1705162735315" duration="8255000" />
-    </task>
-    <task id="LOCAL-00012" summary="feature: 开发短链接网关项目初始化">
-      <option name="closed" value="true" />
-      <created>1703083764817</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1703083764817</updated>
+      <workItem from="1705162735315" duration="9141000" />
     </task>
     <task id="LOCAL-00013" summary="feature: 开发全局异常拦截器">
       <option name="closed" value="true" />
@@ -636,7 +618,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704916234117</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="feature:开发短链接回收站 添加回收站功能">
+      <option name="closed" value="true" />
+      <created>1705173213923</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1705173213923</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +667,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 添加短链接分页查询功能" />
     <MESSAGE value="feature: 格式化" />
     <MESSAGE value="feature: 修改短链接分页查询功能按照时间降序排序" />
     <MESSAGE value="feature: 添加后管系统调用中台系统API" />
@@ -702,7 +691,8 @@
     <MESSAGE value="docs:添加方法注释" />
     <MESSAGE value="feature:开发通过URL获取对应网站标题功能" />
     <MESSAGE value="feature:开发短链接创建时获取原始网站图标URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature:开发短链接创建时获取原始网站图标URL" />
+    <MESSAGE value="feature:开发短链接回收站 添加回收站功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature:开发短链接回收站 添加回收站功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
