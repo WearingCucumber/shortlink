@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature:开发通过URL获取对应网站标题功能">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature:开发短链接创建时获取原始网站图标URL">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/RecycleBinSaveReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/RecycleBinController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/RecycleBinSaveReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/RecycleBinService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/RecycleBinServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/ShortLinkMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/templates/notfound.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/templates/notfound.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shortlink开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/shortlink开发文档.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +31,8 @@
       <list>
         <option value="Enum" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -66,38 +76,38 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17normal",
-    "last_opened_file_path": "C:/Users/lzp/Desktop/shortLink/admin/src/main/java/com/study/shortLink/admin/remote/dto",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.27471265",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17normal&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lzp/Desktop/shortLink/admin/src/main/java/com/study/shortLink/admin/remote/dto&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -124,7 +134,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ShortLinkServiceImpl">
+  <component name="RunManager" selected="Application.RecycleBinServiceImpl">
+    <configuration name="RecycleBinServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.study.shortLink.project.service.impl.RecycleBinServiceImpl" />
+      <module name="shortLink-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.study.shortLink.project.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShortLinkServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.study.shortLink.project.service.impl.ShortLinkServiceImpl" />
       <module name="shortLink-project" />
@@ -188,9 +211,9 @@
       <list>
         <item itemvalue="Spring Boot.ShortLinkApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
+        <item itemvalue="Application.RecycleBinServiceImpl" />
         <item itemvalue="Application.ShortLinkServiceImpl" />
         <item itemvalue="Application.test" />
-        <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -217,15 +240,9 @@
       <workItem from="1704458620012" duration="10621000" />
       <workItem from="1704608946112" duration="6647000" />
       <workItem from="1704710496697" duration="5103000" />
-      <workItem from="1704905138306" duration="10599000" />
-    </task>
-    <task id="LOCAL-00011" summary="feature: 开发短链接中心项目初始化">
-      <option name="closed" value="true" />
-      <created>1703083732742</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1703083732742</updated>
+      <workItem from="1704905138306" duration="11254000" />
+      <workItem from="1705072458285" duration="271000" />
+      <workItem from="1705162735315" duration="8255000" />
     </task>
     <task id="LOCAL-00012" summary="feature: 开发短链接网关项目初始化">
       <option name="closed" value="true" />
@@ -611,7 +628,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704915300509</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="feature:开发短链接创建时获取原始网站图标URL">
+      <option name="closed" value="true" />
+      <created>1704916234117</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1704916234117</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 添加MyBatis-plus 分页插件" />
     <MESSAGE value="feature: 添加短链接分页查询功能" />
     <MESSAGE value="feature: 格式化" />
     <MESSAGE value="feature: 修改短链接分页查询功能按照时间降序排序" />
@@ -677,15 +701,21 @@
     <MESSAGE value="refactor:重构短链接不存在跳转提示页面" />
     <MESSAGE value="docs:添加方法注释" />
     <MESSAGE value="feature:开发通过URL获取对应网站标题功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature:开发通过URL获取对应网站标题功能" />
+    <MESSAGE value="feature:开发短链接创建时获取原始网站图标URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature:开发短链接创建时获取原始网站图标URL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/GroupController.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="9" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/RecycleBinServiceImpl.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

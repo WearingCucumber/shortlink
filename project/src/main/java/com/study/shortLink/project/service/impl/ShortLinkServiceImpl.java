@@ -12,7 +12,7 @@ import com.study.shortLink.project.common.convention.exception.ClientException;
 import com.study.shortLink.project.common.convention.exception.ServiceException;
 import com.study.shortLink.project.dao.entity.ShortLinkDO;
 import com.study.shortLink.project.dao.entity.ShortLinkGotoDO;
-import com.study.shortLink.project.dao.mapper.LinkMapper;
+import com.study.shortLink.project.dao.mapper.ShortLinkMapper;
 import com.study.shortLink.project.dao.mapper.ShortLinkGotoMapper;
 import com.study.shortLink.project.dto.req.ShortLinkCreateReqDTO;
 import com.study.shortLink.project.dto.req.ShortLinkPageReqDTO;
@@ -55,7 +55,7 @@ import static com.study.shortLink.project.common.enums.ValiDateTypeEnum.PERMANEN
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> implements ShortLinkService {
+public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLinkDO> implements ShortLinkService {
     private final RBloomFilter<String> shortUriCreateCachePenetrationBloomFilter;
     private final ShortLinkGotoMapper shortLinkGotoMapper;
     private final StringRedisTemplate stringRedisTemplate;
@@ -112,6 +112,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
                     .eq(ShortLinkDO::getEnableStatus, 0)
                     .eq(ShortLinkDO::getDelFlag, 0);
             shortLinkDO = baseMapper.selectOne(shortLinkDOQueryWrapper);
+            //判断数据库中是否有对应数据
             if (shortLinkDO != null) {
                 if (shortLinkDO.getValidDate() != null && shortLinkDO.getValidDate().before(new Date())) {
                     response.sendRedirect("/page/notfound");
@@ -124,7 +125,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<LinkMapper, ShortLinkDO> i
                         TimeUnit.MILLISECONDS);
                 response.sendRedirect(shortLinkDO.getOriginUrl());
             } else {
-                throw new ClientException("该短链接不存在");
+                response.sendRedirect("/page/notfound");
             }
         } finally {
             lock.unlock();
