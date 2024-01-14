@@ -6,6 +6,7 @@ import com.alibaba.fastjson2.TypeReference;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.study.shortLink.admin.common.convention.result.Result;
 import com.study.shortLink.admin.remote.dto.req.RecycleBinPageReqDTO;
+import com.study.shortLink.admin.remote.dto.req.RecycleBinRecoverReqDTO;
 import com.study.shortLink.admin.remote.dto.req.RecycleBinSaveReqDTO;
 import com.study.shortLink.admin.remote.dto.resp.ShortLinkPageRespDTO;
 
@@ -34,5 +35,15 @@ public interface RecycleBinRemoteService {
         requestMap.put("current",requestParam.getCurrent());
         String resultPageStr = HttpUtil.get("http://127.0.0.1:8001/api/short-link/v1/recycle-bin/page", requestMap);
         return JSON.parseObject(resultPageStr, new TypeReference<>() {});
+    }
+
+    /**
+     * 回收站移出功能
+     * @param requestParam 请求参数
+     */
+
+    default void recoverRecycleBin(RecycleBinRecoverReqDTO requestParam){
+        String jsonBody = JSON.toJSON(requestParam).toString();
+        HttpUtil.post("http://127.0.0.1:8001/api/short-link/v1/recycle-bin/recover",jsonBody);
     }
 }
