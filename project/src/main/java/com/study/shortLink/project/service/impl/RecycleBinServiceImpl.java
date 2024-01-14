@@ -1,11 +1,16 @@
 package com.study.shortLink.project.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.study.shortLink.project.dao.entity.ShortLinkDO;
 import com.study.shortLink.project.dao.mapper.ShortLinkMapper;
 import com.study.shortLink.project.dto.req.RecycleBinSaveReqDTO;
+import com.study.shortLink.project.dto.req.ShortLinkPageReqDTO;
+import com.study.shortLink.project.dto.resp.ShortLinkPageRespDTO;
 import com.study.shortLink.project.service.RecycleBinService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -48,6 +53,19 @@ public class RecycleBinServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLin
 
 
     }
+
+    @Override
+    public IPage<ShortLinkPageRespDTO> recycleBinPage(ShortLinkPageReqDTO requestParam) {
+        LambdaQueryWrapper<ShortLinkDO> wrapper = Wrappers.lambdaQuery(ShortLinkDO.class)
+                .eq(ShortLinkDO::getGid, requestParam.getGid())
+                .eq(ShortLinkDO::getDelFlag, 0)
+                .eq(ShortLinkDO::getEnableStatus, 1)
+                .orderByDesc(ShortLinkDO::getCreateTime);
+        IPage<ShortLinkDO> page = baseMapper.selectPage(requestParam, wrapper);
+        return page.convert(each -> BeanUtil.toBean(each, ShortLinkPageRespDTO.class));
+    }
+
+
 
     public static void main(String[] args) throws MalformedURLException {
         URL url = new URL("http://uri.link/VyWdf");
