@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.study.shortLink.project.dao.entity.ShortLinkDO;
 import com.study.shortLink.project.dao.mapper.ShortLinkMapper;
+import com.study.shortLink.project.dto.req.RecycleBinPageReqDTO;
 import com.study.shortLink.project.dto.req.RecycleBinSaveReqDTO;
-import com.study.shortLink.project.dto.req.ShortLinkPageReqDTO;
 import com.study.shortLink.project.dto.resp.ShortLinkPageRespDTO;
 import com.study.shortLink.project.service.RecycleBinService;
 import lombok.RequiredArgsConstructor;
@@ -55,12 +55,12 @@ public class RecycleBinServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLin
     }
 
     @Override
-    public IPage<ShortLinkPageRespDTO> recycleBinPage(ShortLinkPageReqDTO requestParam) {
+    public IPage<ShortLinkPageRespDTO> recycleBinPage(RecycleBinPageReqDTO requestParam) {
         LambdaQueryWrapper<ShortLinkDO> wrapper = Wrappers.lambdaQuery(ShortLinkDO.class)
-                .eq(ShortLinkDO::getGid, requestParam.getGid())
+                .in(ShortLinkDO::getGid, requestParam.getGidList())
                 .eq(ShortLinkDO::getDelFlag, 0)
                 .eq(ShortLinkDO::getEnableStatus, 1)
-                .orderByDesc(ShortLinkDO::getCreateTime);
+                .orderByDesc(ShortLinkDO::getUpdateTime);
         IPage<ShortLinkDO> page = baseMapper.selectPage(requestParam, wrapper);
         return page.convert(each -> BeanUtil.toBean(each, ShortLinkPageRespDTO.class));
     }

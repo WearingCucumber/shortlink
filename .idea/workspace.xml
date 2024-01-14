@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="refactor: 优化短链接跳转时 缓存穿透的问题 路由表和link表只要同一条数据在二表中没有同时存在则都要加null key">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 开发短链接回收站分页查询功能">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/RecycleBinPageReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/RecycleBinService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/RecycleBinServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/RecycleBinPageReqDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java" afterDir="false" />
@@ -117,11 +121,11 @@
       <recent name="C:\Users\lzp\Desktop\shortLink\gateway\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.study.shortLink.admin.controller" />
+      <recent name="com.study.shortLink.project.dto.req" />
       <recent name="com.study.shortLink.admin.remote.dto.req" />
+      <recent name="com.study.shortLink.admin.controller" />
       <recent name="com.study.shortLink.admin.remote.dto" />
       <recent name="com.study.shortLink.admin.config" />
-      <recent name="com.study.shortLink.project.common.database" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -242,15 +246,7 @@
       <workItem from="1705162735315" duration="11750000" />
       <workItem from="1705234739830" duration="105000" />
       <workItem from="1705235280985" duration="348000" />
-      <workItem from="1705235647473" duration="2564000" />
-    </task>
-    <task id="LOCAL-00014" summary="feature: 开发用户自定义异常码">
-      <option name="closed" value="true" />
-      <created>1703083885207</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1703083885207</updated>
+      <workItem from="1705235647473" duration="9906000" />
     </task>
     <task id="LOCAL-00015" summary="feature: 开发短链接规约功能">
       <option name="closed" value="true" />
@@ -636,7 +632,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705173933311</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="feature: 开发短链接回收站分页查询功能">
+      <option name="closed" value="true" />
+      <created>1705238443471</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1705238443472</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 修改短链接分页查询功能按照时间降序排序" />
     <MESSAGE value="feature: 添加后管系统调用中台系统API" />
     <MESSAGE value="feature: 优化用户注册重复提示报错" />
     <MESSAGE value="feature: 短链接分表" />
@@ -702,20 +705,26 @@
     <MESSAGE value="feature:开发短链接创建时获取原始网站图标URL" />
     <MESSAGE value="feature:开发短链接回收站 添加回收站功能" />
     <MESSAGE value="refactor: 优化短链接跳转时 缓存穿透的问题 路由表和link表只要同一条数据在二表中没有同时存在则都要加null key" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 优化短链接跳转时 缓存穿透的问题 路由表和link表只要同一条数据在二表中没有同时存在则都要加null key" />
+    <MESSAGE value="feature: 开发短链接回收站分页查询功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 开发短链接回收站分页查询功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/RecycleBinServiceImpl.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="13" />
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="16" />
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/RecycleBinController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

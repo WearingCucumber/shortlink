@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.study.shortLink.admin.common.convention.result.Result;
 import com.study.shortLink.admin.common.convention.result.Results;
 import com.study.shortLink.admin.remote.RecycleBinRemoteService;
+import com.study.shortLink.admin.remote.dto.req.RecycleBinPageReqDTO;
 import com.study.shortLink.admin.remote.dto.req.RecycleBinSaveReqDTO;
-import com.study.shortLink.admin.remote.dto.req.ShortLinkPageReqDTO;
 import com.study.shortLink.admin.remote.dto.resp.ShortLinkPageRespDTO;
+import com.study.shortLink.admin.service.RecycleBinService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
+@RequiredArgsConstructor
 public class RecycleBinController {
+    private final RecycleBinService recycleBinService;
     RecycleBinRemoteService recycleBinRemoteService = new RecycleBinRemoteService(){};
 
     /**
@@ -38,7 +42,7 @@ public class RecycleBinController {
      * @return
      */
     @GetMapping("/api/short-link/admin/v1/recycle-bin/page")
-    public Result<IPage<ShortLinkPageRespDTO>> page(ShortLinkPageReqDTO requestParam){
-        return  Results.success(recycleBinRemoteService.recycleBinPage(requestParam));
+    public Result<IPage<ShortLinkPageRespDTO>> page(RecycleBinPageReqDTO requestParam){
+        return  recycleBinService.recycleBinPage(requestParam);
     }
 }
