@@ -115,6 +115,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
             //判断数据库中是否有对应数据
             if (shortLinkDO != null) {
                 if (shortLinkDO.getValidDate() != null && shortLinkDO.getValidDate().before(new Date())) {
+                    stringRedisTemplate.opsForValue().set(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl), "-", 30, TimeUnit.MINUTES);
                     response.sendRedirect("/page/notfound");
                     return;
                 }
