@@ -10,6 +10,7 @@ import com.study.shortLink.project.dao.entity.ShortLinkDO;
 import com.study.shortLink.project.dao.mapper.ShortLinkMapper;
 import com.study.shortLink.project.dto.req.RecycleBinPageReqDTO;
 import com.study.shortLink.project.dto.req.RecycleBinRecoverReqDTO;
+import com.study.shortLink.project.dto.req.RecycleBinRemoveReqDTO;
 import com.study.shortLink.project.dto.req.RecycleBinSaveReqDTO;
 import com.study.shortLink.project.dto.resp.ShortLinkPageRespDTO;
 import com.study.shortLink.project.service.RecycleBinService;
@@ -74,6 +75,22 @@ public class RecycleBinServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLin
                 .enableStatus(0).build();
         baseMapper.update(linkDO, updateWrapper);
         stringRedisTemplate.delete(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl));
+    }
+
+    @Override
+    public void remove(RecycleBinRemoveReqDTO requestParam) {
+        String shortUrl = getShortLinkSuffix(requestParam.getFullShortUrl());
+        LambdaUpdateWrapper<ShortLinkDO> updateWrapper = Wrappers.lambdaUpdate(ShortLinkDO.class)
+                .eq(ShortLinkDO::getFullShortUrl, requestParam.getFullShortUrl())
+                .eq(ShortLinkDO::getGid, requestParam.getGid())
+                .eq(ShortLinkDO::getEnableStatus, 1)
+                .eq(ShortLinkDO::getDelFlag, 0);
+        ShortLinkDO shortLinkDO = new ShortLinkDO();
+        shortLinkDO.setDelFlag(1);
+        baseMapper.update(shortLinkDO,updateWrapper);
+        stringRedisTemplate.delete(
+                String.format(GOTO_SHORT_LINK_KEY, shortUrl)
+        );
     }
 
     private static String getShortLinkSuffix(String fullShortUrl) {

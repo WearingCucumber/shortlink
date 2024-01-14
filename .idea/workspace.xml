@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="refactor: 重构短链接回收站分页查询功能">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/RecycleBinRecoverReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/RecycleBinRecoverReqDTO.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="refactor: 修改短链接跳转失败时的风控逻辑">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/RecycleBinRemoveReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/RecycleBinRemoveReqDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/RecycleBinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/RecycleBinController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/RecycleBinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/RecycleBinService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/RecycleBinServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/RecycleBinServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,23 +244,7 @@
       <workItem from="1705162735315" duration="11750000" />
       <workItem from="1705234739830" duration="105000" />
       <workItem from="1705235280985" duration="348000" />
-      <workItem from="1705235647473" duration="10937000" />
-    </task>
-    <task id="LOCAL-00016" summary="feature: 开发用户管理功能1.用户查询 2. 用户退出 3.用户登录 ....">
-      <option name="closed" value="true" />
-      <created>1703084041907</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1703084041907</updated>
-    </task>
-    <task id="LOCAL-00017" summary="feature: 上传一些杂项">
-      <option name="closed" value="true" />
-      <created>1703084064081</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1703084064081</updated>
+      <workItem from="1705235647473" duration="12849000" />
     </task>
     <task id="LOCAL-00018" summary="feature: 初始化短链接分组功能代码">
       <option name="closed" value="true" />
@@ -639,7 +622,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705245836526</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="feature: 开发回收站恢复功能">
+      <option name="closed" value="true" />
+      <created>1705247274124</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1705247274124</updated>
+    </task>
+    <task id="LOCAL-00066" summary="refactor: 修改短链接跳转失败时的风控逻辑">
+      <option name="closed" value="true" />
+      <created>1705247305610</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1705247305610</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,8 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 优化用户注册重复提示报错" />
-    <MESSAGE value="feature: 短链接分表" />
     <MESSAGE value="feature: 修改字段属性使mybatis-plus查询时不会自动带入" />
     <MESSAGE value="feature: 添加更具分组标识查询对应短链接数量" />
     <MESSAGE value="feature: 短链接分组列表查询返回短链接数量" />
@@ -705,19 +702,21 @@
     <MESSAGE value="refactor: 优化短链接跳转时 缓存穿透的问题 路由表和link表只要同一条数据在二表中没有同时存在则都要加null key" />
     <MESSAGE value="feature: 开发短链接回收站分页查询功能" />
     <MESSAGE value="refactor: 重构短链接回收站分页查询功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 重构短链接回收站分页查询功能" />
+    <MESSAGE value="feature: 开发回收站恢复功能" />
+    <MESSAGE value="refactor: 修改短链接跳转失败时的风控逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 修改短链接跳转失败时的风控逻辑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
