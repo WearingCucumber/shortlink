@@ -156,7 +156,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                 uvCookie.setPath("/"+shortUrl);
                 response.addCookie(uvCookie);
                 uvFirstFlag.set(Boolean.TRUE);
-                stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + fullShortUrl, uv);
+                stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + shortUrl, uv);
             };
             Cookie[] cookies = request.getCookies();
             if (ArrayUtils.isNotEmpty(cookies)){
@@ -165,13 +165,15 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                         .findFirst()
                         .map(Cookie::getValue)
                         .ifPresentOrElse(each->{
-                            Long added = stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + fullShortUrl, each);
-                            uvFirstFlag.set(added!=null && added > 0);
+                            Long uvAdded = stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + shortUrl, each);
+                            uvFirstFlag.set(uvAdded!=null && uvAdded > 0);
                         },addResponseCookieTask);
             }else {
                 addResponseCookieTask.run();
             }
-
+            String remoteAddr = request.getRemoteAddr();
+            Long uipAdded = stringRedisTemplate.opsForSet().add("short-link:stats:uip:" + shortUrl, remoteAddr);
+            boolean uipFirstTag = uipAdded != null && uipAdded > 0 ;
             if (StringUtils.isBlank(gid)){
                 LambdaQueryWrapper<ShortLinkGotoDO> queryWrapper = Wrappers.lambdaQuery(ShortLinkGotoDO.class)
                         .eq(ShortLinkGotoDO::getFullShortUrl, fullShortUrl);
@@ -182,11 +184,10 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
             Week week = DateUtil.dayOfWeekEnum(date);
             int weekValue = week.getIso8601Value();
             int hour = DateUtil.hour(date, true);
-//        int day = DateUtil.dayOfMonth(date);
             LinkAccessStatsDO linkAccessStatsDO = LinkAccessStatsDO.builder()
                     .pv(1)
-                    .uv(uvFirstFlag.get()?1:0)
-                    .uip(1)
+                    .uv(uvFirstFlag.get() ? 1 : 0)
+                    .uip(uipFirstTag ? 1 : 0)
                     .hour(hour)
                     .weekday(weekValue)
                     .date(date)

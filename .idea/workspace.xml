@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发短链接访问量监控功能">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发短链接监控访问用户数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
     </list>
@@ -242,14 +241,7 @@
       <workItem from="1705235647473" duration="13571000" />
       <workItem from="1705321310683" duration="7569000" />
       <workItem from="1705463211595" duration="3621000" />
-    </task>
-    <task id="LOCAL-00020" summary="feature: 开发短链接后管分组新增功能">
-      <option name="closed" value="true" />
-      <created>1703087694145</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1703087694145</updated>
+      <workItem from="1705503762969" duration="767000" />
     </task>
     <task id="LOCAL-00021" summary="feature: 开发短链接分组排序字段">
       <option name="closed" value="true" />
@@ -635,7 +627,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705335656538</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="feature : 短链接监控功能 开发短链接监控访问用户数">
+      <option name="closed" value="true" />
+      <created>1705503832763</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1705503832763</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 短链接分组列表查询返回短链接数量" />
     <MESSAGE value="feature: 创建用户后默认创建对应的默认分组" />
     <MESSAGE value="feature: 全段传递有效期时间序列化" />
     <MESSAGE value="feature: 短链接修改功能" />
@@ -701,7 +700,8 @@
     <MESSAGE value="refactor: 修改短链接跳转失败时的风控逻辑" />
     <MESSAGE value="feature : 开发回收站移除短链接功能" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接访问量监控功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发短链接访问量监控功能" />
+    <MESSAGE value="feature : 短链接监控功能 开发短链接监控访问用户数" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发短链接监控访问用户数" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -735,6 +735,11 @@
           <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java</url>
           <line>134</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
