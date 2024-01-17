@@ -3,10 +3,12 @@ package com.study.shortLink.project.service.impl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.Week;
+import cn.hutool.core.lang.UUID;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.ArrayUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -27,6 +29,7 @@ import com.study.shortLink.project.dto.resp.ShortLinkPageRespDTO;
 import com.study.shortLink.project.service.ShortLinkService;
 import com.study.shortLink.project.toolkit.HashUtil;
 import com.study.shortLink.project.toolkit.LinkUtil;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -44,11 +47,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static com.study.shortLink.project.common.constant.RedisKeyConstant.*;
 import static com.study.shortLink.project.common.enums.ValiDateTypeEnum.PERMANENT;
@@ -91,7 +92,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         String originalLink = stringRedisTemplate.opsForValue().get(String.format(GOTO_SHORT_LINK_KEY, shortUrl));
         ShortLinkDO shortLinkDO;
         if (StringUtils.isNotBlank(originalLink)) {
-            shortLinkStats(fullShortUrl,null,request,response);
+            shortLinkStats(shortUrl,null,request,response);
             response.sendRedirect(originalLink);
             return;
         }
@@ -100,7 +101,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         try {
             originalLink = stringRedisTemplate.opsForValue().get(String.format(GOTO_SHORT_LINK_KEY, shortUrl));
             if (StringUtils.isNotBlank(originalLink)) {
-                shortLinkStats(fullShortUrl,null,request,response);
+                shortLinkStats(shortUrl,null,request,response);
                 response.sendRedirect(originalLink);
                 return;
             }
@@ -131,7 +132,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                         shortLinkDO.getOriginUrl(),
                         LinkUtil.getLinkCacheValidDate(shortLinkDO.getValidDate()),
                         TimeUnit.MILLISECONDS);
-                shortLinkStats(shortLinkDO.getFullShortUrl(),shortLinkDO.getGid(),request,response);
+                shortLinkStats(shortUrl,shortLinkDO.getGid(),request,response);
                 response.sendRedirect(shortLinkDO.getOriginUrl());
             } else {
                 stringRedisTemplate.opsForValue().set(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, shortUrl), "-", 30, TimeUnit.MINUTES);
@@ -142,8 +143,35 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         }
 
     }
-    private void  shortLinkStats(String fullShortUrl , String gid , HttpServletRequest request , HttpServletResponse response){
+    private void  shortLinkStats(String shortUrl , String gid , HttpServletRequest request , HttpServletResponse response){
+        AtomicBoolean uvFirstFlag = new AtomicBoolean();
+        String serverName = request.getServerName();
+        String scheme = request.getScheme();
+        String fullShortUrl = scheme + "://" + serverName + "/" + shortUrl;
         try {
+            Runnable addResponseCookieTask = ()->{
+                String uv = UUID.fastUUID().toString();
+                Cookie uvCookie = new Cookie("uv", uv);
+                uvCookie.setMaxAge(60*60*24*30);
+                uvCookie.setPath("/"+shortUrl);
+                response.addCookie(uvCookie);
+                uvFirstFlag.set(Boolean.TRUE);
+                stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + fullShortUrl, uv);
+            };
+            Cookie[] cookies = request.getCookies();
+            if (ArrayUtils.isNotEmpty(cookies)){
+                Arrays.stream(cookies)
+                        .filter(each -> Objects.equals(each.getName(),"uv"))
+                        .findFirst()
+                        .map(Cookie::getValue)
+                        .ifPresentOrElse(each->{
+                            Long added = stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + fullShortUrl, each);
+                            uvFirstFlag.set(added!=null && added > 0);
+                        },addResponseCookieTask);
+            }else {
+                addResponseCookieTask.run();
+            }
+
             if (StringUtils.isBlank(gid)){
                 LambdaQueryWrapper<ShortLinkGotoDO> queryWrapper = Wrappers.lambdaQuery(ShortLinkGotoDO.class)
                         .eq(ShortLinkGotoDO::getFullShortUrl, fullShortUrl);
@@ -157,7 +185,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
 //        int day = DateUtil.dayOfMonth(date);
             LinkAccessStatsDO linkAccessStatsDO = LinkAccessStatsDO.builder()
                     .pv(1)
-                    .uv(1)
+                    .uv(uvFirstFlag.get()?1:0)
                     .uip(1)
                     .hour(hour)
                     .weekday(weekValue)
