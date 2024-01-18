@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发短链接设备类型访问记录数据">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/LinkNetworkStatsDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkNetworkStatsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发短链接网络类型访问记录数据">
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/LinkAccessLogsDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessLogsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/toolkit/LinkUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/toolkit/LinkUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,15 +245,7 @@
       <workItem from="1705463211595" duration="3621000" />
       <workItem from="1705503762969" duration="6843000" />
       <workItem from="1705510689675" duration="342000" />
-      <workItem from="1705548561766" duration="8505000" />
-    </task>
-    <task id="LOCAL-00026" summary="feature: 短链接后管项目 修改添加分组逻辑： 同一用户不能创建两个相同名称的组">
-      <option name="closed" value="true" />
-      <created>1703094977898</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1703094977898</updated>
+      <workItem from="1705548561766" duration="12840000" />
     </task>
     <task id="LOCAL-00027" summary="feature: 短链接后管项目 修改用户注销功能 通过UserContext获取用户信息上下文">
       <option name="closed" value="true" />
@@ -642,7 +631,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705566967653</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="feature : 短链接监控功能 开发短链接网络类型访问记录数据">
+      <option name="closed" value="true" />
+      <created>1705570019697</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1705570019697</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -683,7 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 短链接修改功能 解决有效期永久情况下到期时间不为null的bug" />
     <MESSAGE value="feature: 开发短链接跳转功能" />
     <MESSAGE value="feature: 修改短链接跳转接口名称错误问题" />
     <MESSAGE value="feature: 优化短链接跳转功能开发缓存击穿和缓存穿透问题" />
@@ -708,7 +704,8 @@
     <MESSAGE value="feature : 短链接监控功能 开发短链接操作系统访问数据" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接浏览器访问记录数据" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接设备类型访问记录数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发短链接设备类型访问记录数据" />
+    <MESSAGE value="feature : 短链接监控功能 开发短链接网络类型访问记录数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发短链接网络类型访问记录数据" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -47,6 +47,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static com.study.shortLink.project.common.constant.RedisKeyConstant.*;
 import static com.study.shortLink.project.common.enums.ValiDateTypeEnum.PERMANENT;
@@ -70,6 +71,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
     private final LinkBrowserStatsMapper linkBrowserStatsMapper;
     private final LinkDeviceStatsMapper linkDeviceStatsMapper;
     private final LinkNetworkStatsMapper linkNetworkStatsMapper;
+    private final LinkAccessLogsMapper linkAccessLogsMapper;
     @Override
     public void redirectUrl(String shortUrl, HttpServletRequest request, HttpServletResponse response) throws IOException {
         String serverName = request.getServerName();
@@ -154,14 +156,15 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         String fullShortUrl = scheme + "://" + serverName + "/" + shortUrl;
         try {
 
+            AtomicReference<String> uv = new AtomicReference<>();
             Runnable addResponseCookieTask = () -> {
-                String uv = UUID.fastUUID().toString();
-                Cookie uvCookie = new Cookie("uv", uv);
+                uv.set(UUID.fastUUID().toString());
+                Cookie uvCookie = new Cookie("uv", uv.get());
                 uvCookie.setMaxAge(60 * 60 * 24 * 30);
                 uvCookie.setPath("/" + shortUrl);
                 response.addCookie(uvCookie);
                 uvFirstFlag.set(Boolean.TRUE);
-                stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + shortUrl, uv);
+                stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + shortUrl, uv.get());
             };
             Cookie[] cookies = request.getCookies();
             //用于统计UV 判断cookie中是否存在uv变量 存在则 获取加入redis中  不存在则创建cookie 加入redis中
@@ -217,8 +220,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                     .build();
             //地区监控数据插入
             linkLocaleStatsMapper.shortLinkLocaleState(linkLocaleStatsDO);
+            String os = LinkUtil.getUserOS(request);
             LinkOsStatsDO linkOsStatsDO = LinkOsStatsDO.builder()
-                    .os(LinkUtil.getUserOS(request))
+                    .os(os)
                     .gid(gid)
                     .cnt(1)
                     .date(date)
@@ -226,8 +230,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                     .build();
             //操作系统监控数据插入
             linkOsStatsMapper.shortLinkOsStats(linkOsStatsDO);
+            String browser = LinkUtil.getBrowser(request);
             LinkBrowserStatsDO linkBrowserStatsDO = LinkBrowserStatsDO.builder()
-                    .browser(LinkUtil.getBrowser(request))
+                    .browser(browser)
                     .cnt(1)
                     .gid(gid)
                     .fullShortUrl(fullShortUrl)
@@ -235,8 +240,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                     .build();
             //浏览器标识数据插入
             linkBrowserStatsMapper.shortLinkBrowserState(linkBrowserStatsDO);
+            String device = LinkUtil.getDevice(request);
             LinkDeviceStatsDO linkDeviceStatsDO = LinkDeviceStatsDO.builder()
-                    .device(LinkUtil.getDevice(((HttpServletRequest) request)))
+                    .device(device)
                     .cnt(1)
                     .gid(gid)
                     .fullShortUrl(fullShortUrl)
@@ -244,8 +250,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                     .build();
             //设备信息监控数据插入
             linkDeviceStatsMapper.shortLinkDeviceState(linkDeviceStatsDO);
+            String network = LinkUtil.getNetwork(request);
             LinkNetworkStatsDO linkNetworkStatsDO = LinkNetworkStatsDO.builder()
-                    .network(LinkUtil.getNetwork(((HttpServletRequest) request)))
+                    .network(network)
                     .cnt(1)
                     .gid(gid)
                     .fullShortUrl(fullShortUrl)
@@ -253,8 +260,21 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                     .build();
             //网络信息监控数据插入
             linkNetworkStatsMapper.shortLinkNetworkState(linkNetworkStatsDO);
+
+            LinkAccessLogsDO linkAccessLogsDO = LinkAccessLogsDO.builder()
+                    .ip(remoteAddr)
+                    .os(os)
+                    .browser(browser)
+                    .device(device)
+                    .network(network)
+                    .fullShortUrl(fullShortUrl)
+                    .gid(gid)
+                    .user(uv.get())
+                    .build();
+            //短链接访问记录数据插入
+            linkAccessLogsMapper.insert(linkAccessLogsDO);
         } catch (Exception e) {
-            throw new ServiceException("转发错误 请联系管理员");
+            throw new ServiceException("数据统计出现异常 请联系管理员");
         }
     }
 
