@@ -7,6 +7,7 @@ import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.study.shortLink.project.dao.entity.LinkLocaleStatsDO;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -26,6 +27,69 @@ public class LinkUtil {
     public static long getLinkCacheValidDate(Date validDate){
         return Optional.ofNullable(validDate).map(each-> DateUtil.between(new Date(),each,DateUnit.MS)).orElse(DEFAULT_CACHE_VALID_TIME);
     }
+
+
+    /**
+     * 获取用户真实IP
+     * @param request
+     * @return
+     */
+    public static String getClientIp(HttpServletRequest request) {
+        String ipAddress = request.getHeader("X-Forwarded-For");
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("Proxy-Client-IP");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("WL-Proxy-Client-IP");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("HTTP_X_FORWARDED_FOR");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("HTTP_X_FORWARDED");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("HTTP_X_CLUSTER_CLIENT_IP");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("HTTP_CLIENT_IP");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("HTTP_FORWARDED_FOR");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("HTTP_FORWARDED");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("HTTP_VIA");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getHeader("REMOTE_ADDR");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
+            ipAddress = request.getRemoteAddr();
+        }
+
+        return ipAddress;
+    }
+
+    /**
+     * 通过高德地图API获取ip对应位置信息
+     * @param ip
+     * @param APIKEY
+     * @return
+     */
     public static LinkLocaleStatsDO getAddrByIP(String ip , String APIKEY){
         HashMap<String, Object> requestBody = new HashMap<>();
         requestBody.put("key",APIKEY);
@@ -37,7 +101,32 @@ public class LinkUtil {
         return new LinkLocaleStatsDO();
     }
 
-    public static void main(String[] args) {
-        System.out.println(getAddrByIP("183.210.251.215", "7d45420859975512ad10090967c84cfd"));
+    /**
+     * 获取用户操作系统数据
+     * @param request
+     * @return
+     */
+    public static String getUserOS(HttpServletRequest request) {
+        String userAgent = request.getHeader("User-Agent");
+
+        if (userAgent == null) {
+            return "unknown";
+        }
+
+        // 在实际应用中，你可能需要使用更复杂的逻辑来解析用户代理字符串
+        if (userAgent.toLowerCase().contains("windows")) {
+            return "windows";
+        } else if (userAgent.toLowerCase().contains("mac")) {
+            return "mac os";
+        } else if (userAgent.toLowerCase().contains("linux")) {
+            return "linux";
+        } else if (userAgent.toLowerCase().contains("android")) {
+            return "android";
+        } else if (userAgent.toLowerCase().contains("iphone") || userAgent.toLowerCase().contains("ipad")) {
+            return "ios";
+        } else {
+            return "unknown";
+        }
     }
+
 }

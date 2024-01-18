@@ -14,14 +14,8 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.study.shortLink.project.common.convention.exception.ClientException;
 import com.study.shortLink.project.common.convention.exception.ServiceException;
-import com.study.shortLink.project.dao.entity.LinkAccessStatsDO;
-import com.study.shortLink.project.dao.entity.LinkLocaleStatsDO;
-import com.study.shortLink.project.dao.entity.ShortLinkDO;
-import com.study.shortLink.project.dao.entity.ShortLinkGotoDO;
-import com.study.shortLink.project.dao.mapper.LinkAccessStatsMapper;
-import com.study.shortLink.project.dao.mapper.LinkLocaleStatsMapper;
-import com.study.shortLink.project.dao.mapper.ShortLinkGotoMapper;
-import com.study.shortLink.project.dao.mapper.ShortLinkMapper;
+import com.study.shortLink.project.dao.entity.*;
+import com.study.shortLink.project.dao.mapper.*;
 import com.study.shortLink.project.dto.req.ShortLinkCreateReqDTO;
 import com.study.shortLink.project.dto.req.ShortLinkPageReqDTO;
 import com.study.shortLink.project.dto.req.ShortLinkUpdateReqDTO;
@@ -72,6 +66,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
     private final RedissonClient redissonClient;
     private final LinkAccessStatsMapper linkAccessStatsMapper;
     private final LinkLocaleStatsMapper linkLocaleStatsMapper;
+    private final LinkOsStatsMapper linkOsStatsMapper;
 
     @Override
     public void redirectUrl(String shortUrl, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -181,7 +176,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                 addResponseCookieTask.run();
             }
             //用于统计uip 通过redis set 判断集合中是否有这个ip 来判断uip是否要增加
-            String remoteAddr = request.getRemoteAddr();
+            String remoteAddr = LinkUtil.getClientIp(request);
             Long uipAdded = stringRedisTemplate.opsForSet().add("short-link:stats:uip:" + shortUrl, remoteAddr);
             boolean uipFirstTag = uipAdded != null && uipAdded > 0;
             if (StringUtils.isBlank(gid)) {
@@ -204,6 +199,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                     .gid(gid)
                     .fullShortUrl(fullShortUrl)
                     .build();
+            //基本监控数据插入
             linkAccessStatsMapper.shortLinkStats(linkAccessStatsDO);
             //通过高德API获取 ip对应的 地区
             LinkLocaleStatsDO amapLocaleStatsDO = LinkUtil.getAddrByIP(remoteAddr, statsLocaleAmapKey);
@@ -217,11 +213,19 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                     .gid(gid)
                     .country("中国")
                     .build();
+            //地区监控数据插入
             linkLocaleStatsMapper.shortLinkLocaleState(linkLocaleStatsDO);
-
-
-        } catch (Throwable ex) {
-            throw ex;
+            LinkOsStatsDO linkOsStatsDO = LinkOsStatsDO.builder()
+                    .os(LinkUtil.getUserOS(request))
+                    .gid(gid)
+                    .cnt(1)
+                    .date(date)
+                    .fullShortUrl(fullShortUrl)
+                    .build();
+            //操作系统监控数据插入
+            linkOsStatsMapper.shortLinkOsStats(linkOsStatsDO);
+        } catch (Exception e) {
+            throw new ServiceException("转发错误 请联系管理员");
         }
     }
 
