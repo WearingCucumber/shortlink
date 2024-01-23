@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发访问单个短链接监控统计功能">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkStatsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/ShortLinkStatsReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsAccessDailyRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsBrowserRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsDeviceRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsLocaleCNRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsNetworkRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsOsRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsTopIpRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsUvRespDTO.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/LinkAccessLogsDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/LinkAccessLogsDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,15 +246,7 @@
       <workItem from="1705510689675" duration="342000" />
       <workItem from="1705548561766" duration="13108000" />
       <workItem from="1706019168744" duration="1765000" />
-      <workItem from="1706022542942" duration="2019000" />
-    </task>
-    <task id="LOCAL-00029" summary="feature: 短链接后管项目 添加分组修改功能">
-      <option name="closed" value="true" />
-      <created>1703139130858</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1703139130858</updated>
+      <workItem from="1706022542942" duration="4567000" />
     </task>
     <task id="LOCAL-00030" summary="feature: 短链接后管项目 修改注销功能注解 参数爆红">
       <option name="closed" value="true" />
@@ -651,7 +632,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706023651560</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能">
+      <option name="closed" value="true" />
+      <created>1706024621439</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1706024621439</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,7 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 优化短链接跳转功能开发缓存击穿和缓存穿透问题" />
     <MESSAGE value="feature: 优化短链接跳转功能的缓存穿透布隆过滤器误判的解决方案" />
     <MESSAGE value="feature: 短链接创建时进行缓存预热" />
     <MESSAGE value="feature: 短链接跳转添加有效期校验功能" />
@@ -717,7 +705,8 @@
     <MESSAGE value="feature : 短链接监控功能 开发短链接网络类型访问记录数据" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接访问监控日志数据" />
     <MESSAGE value="feature : 短链接监控功能 开发访问单个短链接监控统计功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发访问单个短链接监控统计功能" />
+    <MESSAGE value="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

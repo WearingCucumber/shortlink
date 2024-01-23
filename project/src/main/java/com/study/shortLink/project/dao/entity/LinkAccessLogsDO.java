@@ -60,4 +60,11 @@ public class LinkAccessLogsDO  extends BaseDO {
      * 访问网络
      */
     private String network;
+
+    /**
+     * 地区
+     */
+    private String locale;
+
+
 }

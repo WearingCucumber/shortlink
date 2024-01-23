@@ -4,6 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.Week;
 import cn.hutool.core.lang.UUID;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
@@ -174,8 +175,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                         .findFirst()
                         .map(Cookie::getValue)
                         .ifPresentOrElse(each -> {
-                            Long uvAdded = stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + shortUrl, each);
-                            uvFirstFlag.set(uvAdded != null && uvAdded > 0);
+                                Long uvAdded = stringRedisTemplate.opsForSet().add("short-link:stats:uv:" + shortUrl, each);
+                                uvFirstFlag.set(uvAdded != null && uvAdded > 0);
+                                uv.set(each);
                         }, addResponseCookieTask);
             } else {
                 addResponseCookieTask.run();
@@ -208,10 +210,12 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
             linkAccessStatsMapper.shortLinkStats(linkAccessStatsDO);
             //通过高德API获取 ip对应的 地区
             LinkLocaleStatsDO amapLocaleStatsDO = LinkUtil.getAddrByIP(remoteAddr, statsLocaleAmapKey);
+            String actualProvince ;
+            String actualCity;
             LinkLocaleStatsDO linkLocaleStatsDO = LinkLocaleStatsDO.builder()
                     .date(date)
-                    .city(StringUtils.isBlank(amapLocaleStatsDO.getCity()) ? "未知" : amapLocaleStatsDO.getCity())
-                    .province(StringUtils.isBlank(amapLocaleStatsDO.getProvince()) ? "未知" : amapLocaleStatsDO.getProvince())
+                    .city(actualCity = StringUtils.isBlank(amapLocaleStatsDO.getCity()) ? "未知" : amapLocaleStatsDO.getCity())
+                    .province(actualProvince = StringUtils.isBlank(amapLocaleStatsDO.getProvince()) ? "未知" : amapLocaleStatsDO.getProvince())
                     .adcode(StringUtils.isBlank(amapLocaleStatsDO.getAdcode()) ? "未知" : amapLocaleStatsDO.getAdcode())
                     .cnt(1)
                     .fullShortUrl(fullShortUrl)
@@ -270,6 +274,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                     .fullShortUrl(fullShortUrl)
                     .gid(gid)
                     .user(uv.get())
+                    .locale(StrUtil.join("-","中国",actualProvince,actualCity))
                     .build();
             //短链接访问记录数据插入
             linkAccessLogsMapper.insert(linkAccessLogsDO);
