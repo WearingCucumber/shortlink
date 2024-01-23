@@ -4,32 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发短链接访问监控日志数据">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkStatsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/ShortLinkStatsReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsAccessDailyRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsBrowserRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsDeviceRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsLocaleCNRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsNetworkRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsOsRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsTopIpRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsUvRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkStatsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkStatsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发访问单个短链接监控统计功能">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkStatsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/ShortLinkStatsReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsAccessDailyRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsBrowserRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsDeviceRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsLocaleCNRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsNetworkRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsOsRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsTopIpRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsUvRespDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessLogsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessLogsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessStatsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessStatsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkBrowserStatsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkBrowserStatsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkDeviceStatsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkDeviceStatsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkLocaleStatsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkLocaleStatsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkNetworkStatsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkNetworkStatsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkOsStatsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkOsStatsMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +33,8 @@
       <list>
         <option value="Enum" />
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -92,55 +81,55 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17normal&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lzp/Desktop/shortLink/project/src/main/java/com/study/shortLink/project/dto/resp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17normal",
+    "last_opened_file_path": "C:/Users/lzp/Desktop/shortLink/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.27471265",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lzp\Desktop\shortLink\admin\src\main\java\com\study\shortLink\admin\remote\dto\resp" />
       <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\dto\resp" />
       <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\dto\req" />
       <recent name="C:\Users\lzp\Desktop\shortLink\admin\src\main\java\com\study\shortLink\admin\remote\dto" />
       <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\common" />
-      <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.study.shortLink.admin.dto.req" />
+      <recent name="com.study.shortLink.admin.controller" />
       <recent name="com.study.shortLink.project.dao.entity" />
       <recent name="com.study.shortLink.admin.remote.dto.req" />
       <recent name="com.study.shortLink.project.dto.req" />
-      <recent name="com.study.shortLink.admin.controller" />
-      <recent name="com.study.shortLink.admin.remote.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -268,15 +257,7 @@
       <workItem from="1705510689675" duration="342000" />
       <workItem from="1705548561766" duration="13108000" />
       <workItem from="1706019168744" duration="1765000" />
-      <workItem from="1706022542942" duration="797000" />
-    </task>
-    <task id="LOCAL-00028" summary="feature: 短链接后管项目 修改用户上下文工具类  将token封装到用户上下文中">
-      <option name="closed" value="true" />
-      <created>1703139097540</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1703139097540</updated>
+      <workItem from="1706022542942" duration="2019000" />
     </task>
     <task id="LOCAL-00029" summary="feature: 短链接后管项目 添加分组修改功能">
       <option name="closed" value="true" />
@@ -662,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705595572881</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="feature : 短链接监控功能 开发访问单个短链接监控统计功能">
+      <option name="closed" value="true" />
+      <created>1706023651560</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1706023651560</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,7 +692,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 修改短链接跳转接口名称错误问题" />
     <MESSAGE value="feature: 优化短链接跳转功能开发缓存击穿和缓存穿透问题" />
     <MESSAGE value="feature: 优化短链接跳转功能的缓存穿透布隆过滤器误判的解决方案" />
     <MESSAGE value="feature: 短链接创建时进行缓存预热" />
@@ -728,7 +716,8 @@
     <MESSAGE value="feature : 短链接监控功能 开发短链接设备类型访问记录数据" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接网络类型访问记录数据" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接访问监控日志数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发短链接访问监控日志数据" />
+    <MESSAGE value="feature : 短链接监控功能 开发访问单个短链接监控统计功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发访问单个短链接监控统计功能" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
