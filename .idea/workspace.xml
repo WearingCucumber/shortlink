@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发监控用户访问明细">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/ShortLinkStatsAccessRecordReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/ShortLinkStatsAccessRecordReqDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/LinkAccessLogsDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/entity/LinkAccessLogsDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkStatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkStatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessLogsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessLogsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkStatsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkStatsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkStatsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkStatsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +108,9 @@
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
 }]]></component>
@@ -114,11 +126,11 @@
       <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\common" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.study.shortLink.admin.remote.dto.req" />
+      <recent name="com.study.shortLink.project.dto.resp" />
+      <recent name="com.study.shortLink.project.dto.req" />
       <recent name="com.study.shortLink.admin.dto.req" />
       <recent name="com.study.shortLink.admin.controller" />
-      <recent name="com.study.shortLink.project.dao.entity" />
-      <recent name="com.study.shortLink.admin.remote.dto.req" />
-      <recent name="com.study.shortLink.project.dto.req" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -246,15 +258,8 @@
       <workItem from="1705510689675" duration="342000" />
       <workItem from="1705548561766" duration="13108000" />
       <workItem from="1706019168744" duration="1765000" />
-      <workItem from="1706022542942" duration="4567000" />
-    </task>
-    <task id="LOCAL-00030" summary="feature: 短链接后管项目 修改注销功能注解 参数爆红">
-      <option name="closed" value="true" />
-      <created>1703139367744</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1703139367744</updated>
+      <workItem from="1706022542942" duration="5637000" />
+      <workItem from="1706193279915" duration="10268000" />
     </task>
     <task id="LOCAL-00031" summary="feature: 短链接后管项目 添加分组排序功能">
       <option name="closed" value="true" />
@@ -640,7 +645,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706024621439</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="feature : 短链接监控功能 开发监控用户访问明细">
+      <option name="closed" value="true" />
+      <created>1706027265603</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1706027265603</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 优化短链接跳转功能的缓存穿透布隆过滤器误判的解决方案" />
     <MESSAGE value="feature: 短链接创建时进行缓存预热" />
     <MESSAGE value="feature: 短链接跳转添加有效期校验功能" />
     <MESSAGE value="refactor:重构短链接不存在跳转提示页面" />
@@ -706,9 +718,29 @@
     <MESSAGE value="feature : 短链接监控功能 开发短链接访问监控日志数据" />
     <MESSAGE value="feature : 短链接监控功能 开发访问单个短链接监控统计功能" />
     <MESSAGE value="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能" />
+    <MESSAGE value="feature : 短链接监控功能 开发监控用户访问明细" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发监控用户访问明细" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkStatsController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkStatsServiceImpl.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />

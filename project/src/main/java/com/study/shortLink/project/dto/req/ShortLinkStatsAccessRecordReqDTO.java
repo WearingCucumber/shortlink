@@ -15,68 +15,39 @@
  * limitations under the License.
  */
 
-package com.study.shortLink.admin.remote.dto.resp;
+package com.study.shortLink.project.dto.req;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import com.study.shortLink.project.dao.entity.LinkAccessLogsDO;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 /**
- * 短链接监控访问记录响应参数
+ *  短链接监控访问记录请求参数
+ *
  */
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class ShortLinkStatsAccessRecordRespDTO {
+public class ShortLinkStatsAccessRecordReqDTO extends Page<LinkAccessLogsDO> {
 
     /**
-     * 访客类型
+     * 完整短链接
      */
-    private String uvType;
+    private String fullShortUrl;
 
     /**
-     * 浏览器
+     * 分组标识
      */
-    private String browser;
+    private String gid;
 
     /**
-     * 操作系统
-     */
-    private String os;
-
-    /**
-     * ip
-     */
-    private String ip;
-
-    /**
-     * 访问网络
-     */
-    private String network;
-
-    /**
-     * 访问设备
-     */
-    private String device;
-
-    /**
-     * 地区
-     */
-    private String locale;
-
-    /**
-     * 用户信息
-     */
-    private String user;
-
-    /**
-     * 访问时间
+     * 开始日期
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date createTime;
+    private String startDate;
+
+    /**
+     * 结束日期
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private String endDate;
 }
