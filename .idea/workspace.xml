@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature：与前端联调修改一些简单bug">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/constant/ShortLinkStatsMQConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/consumer/ShortLinkStatsSaveConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/domain/MessageWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/event/ShortLinkStatsEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/producer/AbstractCommonSendProduceTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/producer/BaseSendExtendDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/producer/ShortLinkStatsSaveSendProduce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/test/java/com/study/shortLink/project/MQTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="factor: 短链接监控  使用RocketMQ 解决短链接跳转时速度慢的问题">
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,15 +276,7 @@
       <workItem from="1705548561766" duration="13108000" />
       <workItem from="1706019168744" duration="1765000" />
       <workItem from="1706022542942" duration="5637000" />
-      <workItem from="1706193279915" duration="27368000" />
-    </task>
-    <task id="LOCAL-00034" summary="feature: 短链接后官项目 添加短链接管理模块的分表功能">
-      <option name="closed" value="true" />
-      <created>1703264804282</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1703264804282</updated>
+      <workItem from="1706193279915" duration="27803000" />
     </task>
     <task id="LOCAL-00035" summary="feature: 添加MyBatis-plus 分页插件">
       <option name="closed" value="true" />
@@ -684,7 +662,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706363256476</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="factor: 短链接监控  使用RocketMQ 解决短链接跳转时速度慢的问题">
+      <option name="closed" value="true" />
+      <created>1706372546880</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1706372546881</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -725,7 +711,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docs:添加方法注释" />
     <MESSAGE value="feature:开发通过URL获取对应网站标题功能" />
     <MESSAGE value="feature:开发短链接创建时获取原始网站图标URL" />
     <MESSAGE value="feature:开发短链接回收站 添加回收站功能" />
@@ -750,7 +735,8 @@
     <MESSAGE value="feature : 短链接监控功能 开发短链接指定时间内访问记录" />
     <MESSAGE value="feature：添加前端项目" />
     <MESSAGE value="feature：与前端联调修改一些简单bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature：与前端联调修改一些简单bug" />
+    <MESSAGE value="factor: 短链接监控  使用RocketMQ 解决短链接跳转时速度慢的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="factor: 短链接监控  使用RocketMQ 解决短链接跳转时速度慢的问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
