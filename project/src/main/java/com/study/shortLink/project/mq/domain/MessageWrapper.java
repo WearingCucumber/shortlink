@@ -5,6 +5,10 @@ import lombok.*;
 import java.io.Serializable;
 import java.util.UUID;
 
+/**
+ *消息体包装器
+ * @param <T>
+ */
 @Data
 @Builder
 @NoArgsConstructor(force = true)

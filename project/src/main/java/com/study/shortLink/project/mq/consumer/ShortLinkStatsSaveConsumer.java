@@ -26,6 +26,9 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static com.study.shortLink.project.common.constant.ShortLinkStatsMQConstant.*;
 
+/**
+ * 短链接监控信息入库消费者
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor

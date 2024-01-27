@@ -10,6 +10,10 @@ import org.springframework.messaging.Message;
 
 import java.util.Optional;
 
+/**
+ * RocketMQ 抽象公共发送消息组件
+ * @param <T>
+ */
 @Slf4j
 @RequiredArgsConstructor
 public abstract class AbstractCommonSendProduceTemplate<T> {
