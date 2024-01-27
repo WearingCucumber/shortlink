@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发监控用户访问明细">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/req/ShortLinkStatsAccessRecordReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/req/ShortLinkStatsAccessRecordReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发短链接指定时间内访问记录">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkStatsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkStatsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessLogsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dao/mapper/LinkAccessLogsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkStatsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/ShortLinkStatsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkStatsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkStatsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UrlTitleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UrlTitleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +85,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17normal",
-    "last_opened_file_path": "C:/Users/lzp/Desktop/shortLink/admin/src/main/java/com/study/shortLink/admin/remote/dto/resp",
+    "last_opened_file_path": "C:/Users/lzp/Desktop/shortLink",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -103,6 +95,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.27471265",
     "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "ts.external.directory.path": "D:\\Program Files\\IDEA 2022.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -119,11 +112,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lzp\Desktop\shortLink" />
       <recent name="C:\Users\lzp\Desktop\shortLink\admin\src\main\java\com\study\shortLink\admin\remote\dto\resp" />
       <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\dto\resp" />
       <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\dto\req" />
       <recent name="C:\Users\lzp\Desktop\shortLink\admin\src\main\java\com\study\shortLink\admin\remote\dto" />
-      <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\common" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.study.shortLink.admin.remote.dto.req" />
@@ -259,15 +252,7 @@
       <workItem from="1705548561766" duration="13108000" />
       <workItem from="1706019168744" duration="1765000" />
       <workItem from="1706022542942" duration="5637000" />
-      <workItem from="1706193279915" duration="10268000" />
-    </task>
-    <task id="LOCAL-00031" summary="feature: 短链接后管项目 添加分组排序功能">
-      <option name="closed" value="true" />
-      <created>1703151473469</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1703151473469</updated>
+      <workItem from="1706193279915" duration="18172000" />
     </task>
     <task id="LOCAL-00032" summary="refactor: 短链接后管项目 系统路径">
       <option name="closed" value="true" />
@@ -653,7 +638,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706027265603</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="feature : 短链接监控功能 开发短链接指定时间内访问记录">
+      <option name="closed" value="true" />
+      <created>1706204255412</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1706204255412</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +687,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 短链接创建时进行缓存预热" />
     <MESSAGE value="feature: 短链接跳转添加有效期校验功能" />
     <MESSAGE value="refactor:重构短链接不存在跳转提示页面" />
     <MESSAGE value="docs:添加方法注释" />
@@ -719,25 +711,16 @@
     <MESSAGE value="feature : 短链接监控功能 开发访问单个短链接监控统计功能" />
     <MESSAGE value="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能" />
     <MESSAGE value="feature : 短链接监控功能 开发监控用户访问明细" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发监控用户访问明细" />
+    <MESSAGE value="feature : 短链接监控功能 开发短链接指定时间内访问记录" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发短链接指定时间内访问记录" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/controller/ShortLinkStatsController.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkStatsServiceImpl.java</url>
-          <line>191</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

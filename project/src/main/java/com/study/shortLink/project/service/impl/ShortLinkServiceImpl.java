@@ -62,6 +62,8 @@ import static com.study.shortLink.project.common.enums.ValiDateTypeEnum.PERMANEN
 public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLinkDO> implements ShortLinkService {
     @Value("${short-link.stats.locale.amap-key}")
     private String statsLocaleAmapKey;
+    @Value("${short-link.domain}")
+    private String domain;
     private final RBloomFilter<String> shortUriCreateCachePenetrationBloomFilter;
     private final ShortLinkGotoMapper shortLinkGotoMapper;
     private final StringRedisTemplate stringRedisTemplate;
@@ -77,7 +79,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
     public void redirectUrl(String shortUrl, HttpServletRequest request, HttpServletResponse response) throws IOException {
         String serverName = request.getServerName();
         String scheme = request.getScheme();
-        String fullShortUrl = scheme + "://" + serverName + "/" + shortUrl;
+        String fullShortUrl = scheme + "://" + domain + "/" + shortUrl;
         /**
          * 防止缓存穿透
          */
@@ -152,7 +154,8 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
 
     private void shortLinkStats(String shortUrl, String gid, HttpServletRequest request, HttpServletResponse response) {
         AtomicBoolean uvFirstFlag = new AtomicBoolean();
-        String serverName = request.getServerName();
+//        String serverName = request.getServerName();
+        String serverName = domain;
         String scheme = request.getScheme();
         String fullShortUrl = scheme + "://" + serverName + "/" + shortUrl;
         try {
@@ -288,7 +291,8 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
     @Transactional
     public ShortLinkCreateRespDTO createShortLink(ShortLinkCreateReqDTO requestParam) {
         String shortLinkSuffix = generateSuffix(requestParam);
-        String fullShortUrl = requestParam.getDomain() + "/" + shortLinkSuffix;
+        requestParam.setDomain(domain);
+        String fullShortUrl = "http://"+requestParam.getDomain() + "/" + shortLinkSuffix;
         ShortLinkDO shortLinkDO = BeanUtil.toBean(requestParam, ShortLinkDO.class);
         shortLinkDO.setFullShortUrl(fullShortUrl);
         shortLinkDO.setShortUri(shortLinkSuffix);
