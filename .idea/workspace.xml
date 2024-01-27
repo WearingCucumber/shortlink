@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature : 短链接监控功能 开发短链接指定时间内访问记录">
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature：与前端联调修改一些简单bug">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/common/constant/ShortLinkStatsMQConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/consumer/ShortLinkStatsSaveConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/domain/MessageWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/event/ShortLinkStatsEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/producer/AbstractCommonSendProduceTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/producer/BaseSendExtendDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/producer/ShortLinkStatsSaveSendProduce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/test/java/com/study/shortLink/project/MQTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UrlTitleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UrlTitleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.yaml" afterDir="false" />
     </list>
@@ -23,8 +34,8 @@
       <list>
         <option value="Enum" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -118,6 +129,12 @@
       <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\java\com\study\shortLink\project\dto\req" />
       <recent name="C:\Users\lzp\Desktop\shortLink\admin\src\main\java\com\study\shortLink\admin\remote\dto" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\resources\META-INF\spring" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.study.shortLink.project" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.study.shortLink.admin.remote.dto.req" />
       <recent name="com.study.shortLink.project.dto.resp" />
@@ -133,7 +150,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LinkUtil">
+  <component name="RunManager" selected="JUnit.MQTest.mqSendTest">
     <configuration name="LinkUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.study.shortLink.project.toolkit.LinkUtil" />
       <module name="shortLink-project" />
@@ -147,22 +164,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShortLinkServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.study.shortLink.project.service.impl.ShortLinkServiceImpl" />
+    <configuration name="MQTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shortLink-project" />
+      <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.study.shortLink.project.service.impl.*" />
+          <option name="PATTERN" value="com.study.shortLink.project.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.study.shortLink.project" />
+      <option name="MAIN_CLASS_NAME" value="com.study.shortLink.project.MQTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
+    <configuration name="MQTest.mqSendTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shortLink-project" />
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="PACKAGE_NAME" value="com.study.shortLink.project" />
+      <option name="MAIN_CLASS_NAME" value="com.study.shortLink.project.MQTest" />
+      <option name="METHOD_NAME" value="mqSendTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,6 +226,7 @@
     </configuration>
     <configuration name="ShortLinkApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="shortLink-project" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.shortLink.project.ShortLinkApplication" />
       <extension name="coverage">
         <pattern>
@@ -206,13 +238,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ShortLinkApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
+        <item itemvalue="JUnit.MQTest.mqSendTest" />
+        <item itemvalue="JUnit.MQTest" />
         <item itemvalue="Application.LinkUtil" />
-        <item itemvalue="Application.ShortLinkServiceImpl" />
-        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -252,23 +290,7 @@
       <workItem from="1705548561766" duration="13108000" />
       <workItem from="1706019168744" duration="1765000" />
       <workItem from="1706022542942" duration="5637000" />
-      <workItem from="1706193279915" duration="18172000" />
-    </task>
-    <task id="LOCAL-00032" summary="refactor: 短链接后管项目 系统路径">
-      <option name="closed" value="true" />
-      <created>1703173794562</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1703173794562</updated>
-    </task>
-    <task id="LOCAL-00033" summary="feature: 中台项目 开发新增短链接功能">
-      <option name="closed" value="true" />
-      <created>1703263700337</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1703263700337</updated>
+      <workItem from="1706193279915" duration="27368000" />
     </task>
     <task id="LOCAL-00034" summary="feature: 短链接后官项目 添加短链接管理模块的分表功能">
       <option name="closed" value="true" />
@@ -646,7 +668,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706204255412</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="feature：添加前端项目">
+      <option name="closed" value="true" />
+      <created>1706363217482</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1706363217482</updated>
+    </task>
+    <task id="LOCAL-00082" summary="feature：与前端联调修改一些简单bug">
+      <option name="closed" value="true" />
+      <created>1706363256476</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1706363256476</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,8 +725,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 短链接跳转添加有效期校验功能" />
-    <MESSAGE value="refactor:重构短链接不存在跳转提示页面" />
     <MESSAGE value="docs:添加方法注释" />
     <MESSAGE value="feature:开发通过URL获取对应网站标题功能" />
     <MESSAGE value="feature:开发短链接创建时获取原始网站图标URL" />
@@ -712,15 +748,17 @@
     <MESSAGE value="feature : 后管对接短链接监控功能 开发访问单个短链接监控统计功能" />
     <MESSAGE value="feature : 短链接监控功能 开发监控用户访问明细" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接指定时间内访问记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature : 短链接监控功能 开发短链接指定时间内访问记录" />
+    <MESSAGE value="feature：添加前端项目" />
+    <MESSAGE value="feature：与前端联调修改一些简单bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature：与前端联调修改一些简单bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java</url>
-          <line>162</line>
-          <option name="timeStamp" value="19" />
+          <line>203</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

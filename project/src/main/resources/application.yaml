@@ -17,6 +17,14 @@ spring:
     view:
       prefix: /templates/
       suffix: .html
+
+rocketmq:
+  name-server: 192.168.70.128:9876
+  producer:
+    group: short-link_project_common-message-execute-pg
+    send-message-timeout: 2000
+    retry-times-when-send-failed: 1
+    retry-times-when-send-async-failed: 1
 short-link:
   stats:
     locale:
