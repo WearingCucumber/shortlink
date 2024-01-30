@@ -1,5 +1,6 @@
 package com.study.shortLink.project.dao.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.study.shortLink.project.dao.entity.LinkLocaleStatsDO;
 import com.study.shortLink.project.dto.req.ShortLinkStatsReqDTO;
 import org.apache.ibatis.annotations.Insert;
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * 地区统计访问持久层
  */
-public interface LinkLocaleStatsMapper {
+public interface LinkLocaleStatsMapper extends BaseMapper<LinkLocaleStatsDO> {
     /**
      * 记录地区访问监控数据
      * @param linkLocaleStatsDO

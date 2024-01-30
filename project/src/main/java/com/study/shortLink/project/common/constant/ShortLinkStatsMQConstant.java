@@ -17,6 +17,14 @@ public final class ShortLinkStatsMQConstant {
 
 
     /**
+     * 监控数据入库业务 Tag Key
+     */
+    public static final String LINK_STATS_DELAY_SAVE_TAG_KEY = "link_stats-delay-save_tag";
+
+
+
+
+    /**
      * 监控数据入库消息消费者组 Key
      */
     public static final String LINK_STATS_SAVE_CG_KEY = "link_stats-save_cg";
