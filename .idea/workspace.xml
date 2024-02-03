@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="optimize: 优化代码逻辑">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="optimize: 优化mq消费异常时 提示输出消息id便于排查异常原因">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/consumer/ShortLinkStatsDelaySaveConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/consumer/ShortLinkStatsDelaySaveConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/consumer/ShortLinkStatsSaveConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/mq/consumer/ShortLinkStatsSaveConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/service/impl/ShortLinkServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/ShortLinkAdminApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/ShortLinkAdminApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/ShortLinkApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/study/shortLink/project/ShortLinkApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,6 +205,7 @@
     </configuration>
     <configuration name="ShortLinkAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="shortLink-admin" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.shortLink.admin.ShortLinkAdminApplication" />
       <extension name="coverage">
         <pattern>
@@ -287,23 +288,7 @@
       <workItem from="1706452981769" duration="631000" />
       <workItem from="1706816817740" duration="17000" />
       <workItem from="1706817184959" duration="619000" />
-      <workItem from="1706970311574" duration="3665000" />
-    </task>
-    <task id="LOCAL-00036" summary="feature: 添加短链接分页查询功能">
-      <option name="closed" value="true" />
-      <created>1703405633062</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1703405633062</updated>
-    </task>
-    <task id="LOCAL-00037" summary="feature: 格式化">
-      <option name="closed" value="true" />
-      <created>1703405644965</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1703405644965</updated>
+      <workItem from="1706970311574" duration="5281000" />
     </task>
     <task id="LOCAL-00038" summary="feature: 修改短链接分页查询功能按照时间降序排序">
       <option name="closed" value="true" />
@@ -681,7 +666,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706373014950</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="optimize: 优化短链接修改功能 修改短链接数据时将原始链接同步至redis中">
+      <option name="closed" value="true" />
+      <created>1706978261222</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1706978261222</updated>
+    </task>
+    <task id="LOCAL-00086" summary="optimize: 优化mq消费异常时 提示输出消息id便于排查异常原因">
+      <option name="closed" value="true" />
+      <created>1706978327255</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1706978327255</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -722,8 +723,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature:开发短链接创建时获取原始网站图标URL" />
-    <MESSAGE value="feature:开发短链接回收站 添加回收站功能" />
     <MESSAGE value="refactor: 优化短链接跳转时 缓存穿透的问题 路由表和link表只要同一条数据在二表中没有同时存在则都要加null key" />
     <MESSAGE value="feature: 开发短链接回收站分页查询功能" />
     <MESSAGE value="refactor: 重构短链接回收站分页查询功能" />
@@ -747,7 +746,9 @@
     <MESSAGE value="feature：与前端联调修改一些简单bug" />
     <MESSAGE value="factor: 短链接监控  使用RocketMQ 解决短链接跳转时速度慢的问题" />
     <MESSAGE value="optimize: 优化代码逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimize: 优化代码逻辑" />
+    <MESSAGE value="optimize: 优化短链接修改功能 修改短链接数据时将原始链接同步至redis中" />
+    <MESSAGE value="optimize: 优化mq消费异常时 提示输出消息id便于排查异常原因" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimize: 优化mq消费异常时 提示输出消息id便于排查异常原因" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
