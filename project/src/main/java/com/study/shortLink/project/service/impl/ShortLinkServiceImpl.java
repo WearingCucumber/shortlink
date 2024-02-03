@@ -330,6 +330,12 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                         //这里用来判断有效期类型是否是永久有效 如果是的话则直接设置有效期时间为null
                         .set(Objects.equals(requestParam.getValidDateType(), PERMANENT.getType()), ShortLinkDO::getValidDate, null);
                 baseMapper.update(shortLinkDo, updateWrapper);
+                stringRedisTemplate.opsForValue().set(
+                        String.format(GOTO_SHORT_LINK_KEY,shortLinkDo.getShortUri()),
+                        shortLinkDo.getOriginUrl(),
+                        LinkUtil.getLinkCacheValidDate(shortLinkDo.getValidDate()),
+                        TimeUnit.MINUTES
+                );
             } else {
                 if (!rLock.tryLock()) throw new ServiceException("短链接真在被访问，请稍后再试");
                 try {
@@ -398,6 +404,12 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                             .gid(requestParam.getGid())
                             .build();
                     linkAccessLogsMapper.update(linkAccessLogsDO, linkAccessLogsUpdateWrapper);
+                    stringRedisTemplate.opsForValue().set(
+                            String.format(GOTO_SHORT_LINK_KEY,shortLinkDo.getShortUri()),
+                            shortLinkDo.getOriginUrl(),
+                            LinkUtil.getLinkCacheValidDate(shortLinkDo.getValidDate()),
+                            TimeUnit.MINUTES
+                    );
                 }finally {
                     rLock.unlock();
                 }
