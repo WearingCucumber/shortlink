@@ -41,7 +41,7 @@ public class UserTransmitFilter implements Filter {
         if (!IGNORE_URI.contains(requestURI)) {
             String method = httpServletRequest.getMethod();
             if (!(Objects.equals(requestURI, "/api/short-link/admin/v1/user") && Objects.equals(method, "POST"))) {
-                String token = httpServletRequest.getHeader("token");
+                String token = httpServletRequest.getHeader("Token");
                 String username = JWT.of(token).setKey("WearingCucumber".getBytes()).getPayload("username").toString();
                 if (!StrUtil.isAllNotBlank(username, token)) {
                     returnJson((HttpServletResponse) servletResponse, JSON.toJSONString(Results.failure(new ClientException(USER_TOKEN_FAIL))));

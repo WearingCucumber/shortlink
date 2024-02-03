@@ -2,14 +2,14 @@ package com.study.shortLink.admin.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.study.shortLink.admin.common.biz.user.UserContext;
 import com.study.shortLink.admin.common.convention.exception.ServiceException;
 import com.study.shortLink.admin.common.convention.result.Result;
 import com.study.shortLink.admin.dao.entity.GroupDO;
 import com.study.shortLink.admin.dao.mapper.GroupMapper;
-import com.study.shortLink.admin.remote.RecycleBinRemoteService;
+import com.study.shortLink.admin.remote.ShortLinkActualRemoteService;
 import com.study.shortLink.admin.remote.dto.req.RecycleBinPageReqDTO;
 import com.study.shortLink.admin.remote.dto.resp.ShortLinkPageRespDTO;
 import com.study.shortLink.admin.service.RecycleBinService;
@@ -22,11 +22,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RecycleBinServiceImpl implements RecycleBinService {
     private final GroupMapper groupMapper;
-    private final RecycleBinRemoteService recycleBinRemoteService = new RecycleBinRemoteService() {
-    };
+    private final ShortLinkActualRemoteService shortLinkActualRemoteService;
 
     @Override
-    public Result<IPage<ShortLinkPageRespDTO>> recycleBinPage(RecycleBinPageReqDTO requestParam) {
+    public Result<Page<ShortLinkPageRespDTO>> recycleBinPage(RecycleBinPageReqDTO requestParam) {
         LambdaQueryWrapper<GroupDO> queryWrapper = Wrappers.lambdaQuery(GroupDO.class)
                 .eq(GroupDO::getUsername, UserContext.getUsername())
                 .eq(GroupDO::getDelFlag, 0);
@@ -36,6 +35,6 @@ public class RecycleBinServiceImpl implements RecycleBinService {
         }
         List<String> gidList = groupDOList.stream().map(GroupDO::getGid).toList();
         requestParam.setGidList(gidList);
-        return recycleBinRemoteService.recycleBinPage(requestParam);
+        return shortLinkActualRemoteService.pageRecycleBinShortLink(requestParam.getGidList(),requestParam.getCurrent(),requestParam.getSize());
     }
 }

@@ -13,7 +13,7 @@ import com.study.shortLink.admin.dao.mapper.GroupMapper;
 import com.study.shortLink.admin.dto.req.ShortLinkGroupSortGroupReqDTO;
 import com.study.shortLink.admin.dto.req.ShortLinkGroupUpdateGroupReqDTO;
 import com.study.shortLink.admin.dto.resp.ShortLinkGroupRespDTO;
-import com.study.shortLink.admin.remote.ShortLinkRemoteService;
+import com.study.shortLink.admin.remote.ShortLinkActualRemoteService;
 import com.study.shortLink.admin.remote.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.study.shortLink.admin.service.GroupService;
 import com.study.shortLink.admin.toolkit.RandomStringGenerator;
@@ -29,8 +29,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implements GroupService {
-    ShortLinkRemoteService shortLinkRemoteService = new ShortLinkRemoteService() {
-    };
+    private final ShortLinkActualRemoteService shortLinkActualRemoteService;
     @Override
     public void saveGroup(String groupName) {
         String username = UserContext.getUsername();
@@ -67,7 +66,7 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implemen
                 .eq(GroupDO::getUsername, username)
                 .orderByDesc(GroupDO::getSortOrder, GroupDO::getUpdateTime);
         List<GroupDO> groupDOList = baseMapper.selectList(queryWrapper);
-        Result<List<ShortLinkGroupCountQueryRespDTO>> listResult = shortLinkRemoteService
+        Result<List<ShortLinkGroupCountQueryRespDTO>> listResult = shortLinkActualRemoteService
                 .listGroupShortLinkCount(groupDOList.stream().map(GroupDO::getGid).toList());
         List<ShortLinkGroupRespDTO> shortLinkGroupRespDTOS = BeanUtil.copyToList(groupDOList, ShortLinkGroupRespDTO.class);
         shortLinkGroupRespDTOS.forEach(each ->{
