@@ -34,13 +34,13 @@ public class ShortLinkStatsDelaySaveConsumer implements RocketMQListener<Message
                         //判断当前这个消息流程是否执行完成
                         if (messageQueueIdempotentHandler.isAccomplish(messageId))
                             return;
-                        throw new ServiceException("消息消费异常，需要重试");
+                        throw new ServiceException("消息消费异常，需要重试 [messageID]:"+messageId);
                     }
                     try {
                         shortLinkStatsSaveSendProduce.sendMessage(message.getMessage());
                     }catch (Exception e){
                         messageQueueIdempotentHandler.delMessageProcessed(messageId);
-                        throw new ServiceException("消息消费异常，需要重试");
+                        throw new ServiceException("消息消费异常，需要重试 [messageID]:"+messageId);
                     }
                     messageQueueIdempotentHandler.setAccomplish(messageId);
                 });
