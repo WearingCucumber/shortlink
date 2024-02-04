@@ -1,10 +1,12 @@
 package com.study.shortLink.admin.controller;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.study.shortLink.admin.common.convention.result.Result;
 import com.study.shortLink.admin.common.convention.result.Results;
 import com.study.shortLink.admin.dto.req.UserLoginReqDTO;
 import com.study.shortLink.admin.dto.req.UserRegisterReqDTO;
 import com.study.shortLink.admin.dto.req.UserUpdateReqDTO;
+import com.study.shortLink.admin.dto.resp.UserActualRespDTO;
 import com.study.shortLink.admin.dto.resp.UserLoginRespDTO;
 import com.study.shortLink.admin.dto.resp.UserRespDTO;
 import com.study.shortLink.admin.service.UserService;
@@ -29,6 +31,13 @@ public class UserController {
         UserRespDTO result = userService.getUserByUsername(username);
         return Results.success(result);
     }
+    /**
+     * 根据用户名查询无脱敏用户信息
+     */
+    @GetMapping("/api/short-link/admin/v1/actual/user/{username}")
+    public Result<UserActualRespDTO> getActualUserByUsername(@PathVariable("username") String username) {
+        return Results.success(BeanUtil.toBean(userService.getUserByUsername(username), UserActualRespDTO.class));
+    }
 
     /**
      * 查询用户名是否存在
@@ -37,7 +46,6 @@ public class UserController {
      */
     @GetMapping("/api/short-link/admin/v1/user/has-username")
     public Result<Boolean> hasUsername(@RequestParam("username") String username){
-        System.out.println("111111111");
         return Results.success(userService.hasUsername(username));
     }
 

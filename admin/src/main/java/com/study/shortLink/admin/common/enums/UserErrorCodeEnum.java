@@ -8,9 +8,6 @@ import com.study.shortLink.admin.common.convention.errorcode.IErrorCode;
  * 公众号：马丁玩编程，回复：加群，添加马哥微信（备注：link）获取项目资料
  */
 public enum UserErrorCodeEnum implements IErrorCode {
-
-    USER_TOKEN_FAIL("A000200", "用户Token验证失败"),
-
     USER_NULL("B000200", "用户记录不存在"),
 
     USER_NAME_EXIST("B000201", "用户名已存在"),

@@ -29,6 +29,7 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.TimeUnit;
 
 import static com.study.shortLink.admin.common.constant.RedisCacheConstant.LOCK_USER_REGISTER_KEY;
+import static com.study.shortLink.admin.common.constant.RedisCacheConstant.USER_LOGIN_KEY;
 import static com.study.shortLink.admin.common.enums.UserErrorCodeEnum.*;
 
 @Service
@@ -101,7 +102,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
 
     @Override
     public UserLoginRespDTO login(UserLoginReqDTO requestParam) {
-        Boolean hasLogin = stringRedisTemplate.hasKey("login_" + requestParam.getUsername());
+        Boolean hasLogin = stringRedisTemplate.hasKey(USER_LOGIN_KEY + requestParam.getUsername());
         if (hasLogin != null && hasLogin) {
             throw new ClientException("用户已登录");
         }
@@ -127,14 +128,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
                 .setKey("WearingCucumber".getBytes())
                 .sign();
 //        String uuid = UUID.randomUUID().toString();
-        stringRedisTemplate.opsForHash().put("login_" + requestParam.getUsername(), token, JSON.toJSONString(userDO));
-        stringRedisTemplate.expire("login_" + requestParam.getUsername(), 30, TimeUnit.DAYS);
+        stringRedisTemplate.opsForHash().put(USER_LOGIN_KEY + requestParam.getUsername(), token, JSON.toJSONString(userDO));
+        stringRedisTemplate.expire(USER_LOGIN_KEY + requestParam.getUsername(), 30, TimeUnit.DAYS);
         return new UserLoginRespDTO(token);
     }
 
     @Override
     public Boolean checkLogin(String username, String token) {
-        return stringRedisTemplate.opsForHash().get("login_" + username, token) != null;
+        return stringRedisTemplate.opsForHash().get(USER_LOGIN_KEY + username, token) != null;
 
     }
 
@@ -143,7 +144,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
         String token = UserContext.getToken();
         String username = UserContext.getUsername();
         if (checkLogin(username, token)) {
-            stringRedisTemplate.delete("login_" + username);
+            stringRedisTemplate.delete(USER_LOGIN_KEY + username);
             return;
         }
         throw new ClientException("用户token不存在或用户未登录");

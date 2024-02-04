@@ -4,22 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="fix: 修改中台服务名错误问题">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkActualRemoteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/test/java/com/study/shortLink/project/NacosTest.java" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="optimize: 修改配置连接linux服务器中的nacos">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/resp/UserActualRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/GatewayServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/dto/GatewayErrorResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/filter/TokenValidateGatewayFilterFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserTransmitFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserTransmitFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/ShortLinkStatsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UrlTitleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UrlTitleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/RecycleBinRemoteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkRemoteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/ShortLinkStatsRemoteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/remote/UrlTitleRemoteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/RecycleBinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/RecycleBinService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/GroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/RecycleBinServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/RecycleBinServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/constant/RedisCacheConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/constant/RedisCacheConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/enums/UserErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/enums/UserErrorCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/config/UserConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/config/UserConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-vue/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/src/api/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-vue/src/views/login/LoginIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/src/views/login/LoginIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-vue/src/views/mySpace/MySpaceIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/src/views/mySpace/MySpaceIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-vue/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,11 +141,11 @@
       <recent name="com.study.shortLink.project" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.study.shortLink.admin.dto.resp" />
       <recent name="com.study.shortLink.admin.remote" />
       <recent name="com.study.shortLink.admin.remote.dto.req" />
       <recent name="com.study.shortLink.project.dto.resp" />
       <recent name="com.study.shortLink.project.dto.req" />
-      <recent name="com.study.shortLink.admin.dto.req" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -150,23 +155,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.NacosTest.nacos">
-    <configuration name="MQTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shortLink-project" />
-      <shortenClasspath name="ARGS_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.study.shortLink.project.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.study.shortLink.project" />
-      <option name="MAIN_CLASS_NAME" value="com.study.shortLink.project.MQTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.GatewayServiceApplication">
     <configuration name="MQTest.mqSendTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shortLink-project" />
       <shortenClasspath name="ARGS_FILE" />
@@ -215,6 +204,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shortLink-gateway" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.shortLink.gateway.GatewayServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.study.shortLink.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShortLinkAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="shortLink-admin" />
       <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
@@ -251,11 +254,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ShortLinkApplication" />
+        <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
+        <item itemvalue="Spring Boot.ShortLinkApplication" />
         <item itemvalue="JUnit.NacosTest.nacos" />
         <item itemvalue="JUnit.MQTest.mqSendTest" />
-        <item itemvalue="JUnit.MQTest" />
       </list>
     </recent_temporary>
   </component>
@@ -300,23 +303,8 @@
       <workItem from="1706452981769" duration="631000" />
       <workItem from="1706816817740" duration="17000" />
       <workItem from="1706817184959" duration="619000" />
-      <workItem from="1706970311574" duration="12344000" />
-    </task>
-    <task id="LOCAL-00041" summary="feature: 短链接分表">
-      <option name="closed" value="true" />
-      <created>1703428038618</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1703428038618</updated>
-    </task>
-    <task id="LOCAL-00042" summary="feature: 修改字段属性使mybatis-plus查询时不会自动带入">
-      <option name="closed" value="true" />
-      <created>1703436932327</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1703436932327</updated>
+      <workItem from="1706970311574" duration="14010000" />
+      <workItem from="1707060225453" duration="6492000" />
     </task>
     <task id="LOCAL-00043" summary="feature: 添加更具分组标识查询对应短链接数量">
       <option name="closed" value="true" />
@@ -694,7 +682,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706985838712</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="feature：admin服务端需要远程调用的接口全部使用openFeign的方式进行调用">
+      <option name="closed" value="true" />
+      <created>1706986160986</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1706986160986</updated>
+    </task>
+    <task id="LOCAL-00091" summary="optimize: 修改配置连接linux服务器中的nacos">
+      <option name="closed" value="true" />
+      <created>1706986211998</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1706986211999</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -735,8 +739,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: 重构短链接回收站分页查询功能" />
-    <MESSAGE value="feature: 开发回收站恢复功能" />
     <MESSAGE value="refactor: 修改短链接跳转失败时的风控逻辑" />
     <MESSAGE value="feature : 开发回收站移除短链接功能" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接访问量监控功能" />
@@ -760,7 +762,9 @@
     <MESSAGE value="optimize: 优化mq消费异常时 提示输出消息id便于排查异常原因" />
     <MESSAGE value="feature: 引入微服务框架：nacos、openfeign 添加依赖修改配置文件" />
     <MESSAGE value="fix: 修改中台服务名错误问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 修改中台服务名错误问题" />
+    <MESSAGE value="feature：admin服务端需要远程调用的接口全部使用openFeign的方式进行调用" />
+    <MESSAGE value="optimize: 修改配置连接linux服务器中的nacos" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimize: 修改配置连接linux服务器中的nacos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -784,6 +788,28 @@
           <url>file://$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/RecycleBinController.java</url>
           <line>46</line>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/filter/TokenValidateGatewayFilterFactory.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/filter/TokenValidateGatewayFilterFactory.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/console-vue/src/views/login/LoginIndex.vue</url>
+          <line>193</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/console-vue/src/views/login/LoginIndex.vue</url>
+          <line>191</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
