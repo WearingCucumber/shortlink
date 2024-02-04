@@ -189,7 +189,7 @@ const addUser = (formEl) => {
     if (valid) {
       // 检测用户名是否已经存在
       const res1 = await API.user.hasUsername({ username: addForm.username })
-      if (res1.data.success !== false) {
+      if (res1.data.data !== false) {
         // 注册
         const res2 = await API.user.addUser(addForm)
         // console.log(res2)

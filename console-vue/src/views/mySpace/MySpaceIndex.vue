@@ -202,7 +202,7 @@
                   placement="bottom-end"
                 >
                   <el-icon
-                    @click="copyUrl('http://' + scope.row.fullShortUrl)"
+                    @click="copyUrl(scope.row.fullShortUrl)"
                     class="table-edit copy-url"
                   >
                     <Share />
