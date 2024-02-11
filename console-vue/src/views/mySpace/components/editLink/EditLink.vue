@@ -4,8 +4,8 @@
       <el-form-item label="跳转链接" prop="originUrl">
         <el-input v-model="formData.originUrl" placeholder="请输入http://或https://开头的链接或应用跳转链接"></el-input>
       </el-form-item>
-      <el-form-item label="描述信息" prop="describe">
-        <el-input :rows="4" v-model="formData.describe" type="textarea" placeholder="可通过换行创建多个短链，一行一个，单次最多创建50条" />
+      <el-form-item label="描述信息" prop="description">
+        <el-input :rows="4" v-model="formData.description" type="textarea" placeholder="可通过换行创建多个短链，一行一个，单次最多创建50条" />
         <span>{{ describeRows + '/' + maxDescribeRows }}</span>
       </el-form-item>
 
@@ -87,7 +87,7 @@ const formData = reactive({
   originGid: editData.gid,
   createdType: editData.createdType,
   validDate: editData.validDate,
-  describe: editData.describe,
+  description: editData.description,
   validDateType: editData.validDateType,
   fullShortUrl: editData.fullShortUrl
 })
@@ -96,7 +96,7 @@ const initFormData = () => {
   formData.originUrl = null
   formData.createdType = 1
   formData.validDate = null
-  formData.describe = null
+  formData.description = null
   formData.validDateType = 0
   formData.fullShortUrl = null
 }
@@ -119,7 +119,7 @@ const fd = (fn, delay) => {
 const queryTitle = (url) => {
   if (reg.test(url)) {
     API.smallLinkPage.queryTitle({ url: url }).then(res => {
-      formData.describe = res?.data?.data
+      formData.description = res?.data?.data
     })
   }
 }
@@ -129,7 +129,7 @@ watch(
   nV => {
     originUrlRows.value = (nV || '').split(/\r|\r\n|\n/)?.length ?? 0
     // 只有在描述内容为空时才会去查询链接对应的标题
-    if (!formData.describe) {
+    if (!formData.description) {
       getTitle(nV)
     }
   }
@@ -138,7 +138,7 @@ const maxDescribeRows = ref(100) // 最多多少行
 // 描述信息有多少行
 const describeRows = ref(0)
 watch(
-  () => formData.describe,
+  () => formData.description,
   nV => {
     describeRows.value = (nV || '').split(/\r|\r\n|\n/)?.length ?? 0
   }
@@ -164,7 +164,7 @@ watch(
     formData.originGid = nV.gid
     formData.createdType = nV.createdType
     formData.validDate = nV.validDate
-    formData.describe = nV.describe
+    formData.description = nV.description
     formData.validDateType = nV.validDateType
     formData.fullShortUrl = nV.fullShortUrl
   },
@@ -196,7 +196,7 @@ const formRule = reactive({
     },
   ],
   gid: [{ required: true, message: '请选择分组', trigger: 'blur' }],
-  describe: [
+  description: [
     { required: true, message: '请输入描述信息', trigger: 'blur' },
     {
       validator: function (rule, value, callback) {

@@ -35,7 +35,7 @@
                   v-if="!(item.shortLinkCount === 0 || item.shortLinkCount === null)"
                   class="edit"
                   :class="{ zero: item.shortLinkCount === 0 }"
-                  @click="chartsVisible({ describe: item.name, gid: item.gid, group: true })"
+                  @click="chartsVisible({ description: item.name, gid: item.gid, group: true })"
                 >
                   <Histogram />
                 </el-icon>
@@ -146,8 +146,8 @@
                   alt=""
                 />
                 <div class="name-date">
-                  <el-tooltip show-after="500" :content="scope.row.describe">
-                    <span>{{ scope.row.describe }}</span>
+                  <el-tooltip show-after="500" :content="scope.row.description">
+                    <span>{{ scope.row.description }}</span>
                   </el-tooltip>
                   <div class="time" style="display: flex">
                     <span>{{ scope.row.createTime }}</span>
@@ -598,7 +598,7 @@ const tableFullShortUrl = ref()
 const tableGid = ref()
 // 点击查看数据图表
 const chartsVisible = async (rowInfo, dateList) => {
-  chartsInfoTitle.value = rowInfo?.describe
+  chartsInfoTitle.value = rowInfo?.description
   // 如果传入的group为true的话就查询分组的数据，如果没传就查询单链的数据
   const { fullShortUrl, gid, group, originUrl, favicon } = rowInfo
   originUrl1.value = originUrl

@@ -15,13 +15,13 @@
           placeholder="请输入http://或https://开头的链接或应用跳转链接，一行一个，最多100行"
         />
       </el-form-item>
-      <el-form-item label="描述信息" prop="describe">
+      <el-form-item label="描述信息" prop="description">
         <el-input
           maxlength="100"
           show-word-limit
           v-loading="isLoading"
           :rows="4"
-          v-model="formData.describe"
+          v-model="formData.description"
           type="textarea"
           placeholder="请输入描述信息"
         />
@@ -123,7 +123,7 @@ const formData = reactive({
   gid: null,
   createdType: 1,
   validDate: null,
-  describe: null,
+  description: null,
   validDateType: 0
 })
 watch(
@@ -140,7 +140,7 @@ const initFormData = () => {
   formData.originUrl = null
   formData.createdType = 1
   formData.validDate = null
-  formData.describe = null
+  formData.description = null
   formData.validDateType = 0
 }
 const maxOriginUrlRows = ref(100) // 最多多少行
@@ -164,7 +164,7 @@ const queryTitle = (url) => {
   if (reg.test(url)) {
     isLoading.value = true
     API.smallLinkPage.queryTitle({ url: url }).then((res) => {
-      formData.describe = res?.data?.data
+      formData.description = res?.data?.data
       isLoading.value = false
     })
   }
@@ -175,7 +175,7 @@ watch(
   (nV) => {
     originUrlRows.value = (nV || '').split(/\r|\r\n|\n/)?.length ?? 0
     // 只有在描述内容为空时才会去查询链接对应的标题
-    if (!formData.describe) {
+    if (!formData.description) {
       // 外边包一层防抖
       getTitle(nV)
     }
@@ -185,7 +185,7 @@ const maxDescribeRows = ref(100) // 最多多少行
 // 描述信息有多少行
 const describeRows = ref(0)
 watch(
-  () => formData.describe,
+  () => formData.description,
   (nV) => {
     describeRows.value = (nV || '').split(/\r|\r\n|\n/)?.length ?? 0
   }
@@ -247,7 +247,7 @@ const formRule = reactive({
     }
   ],
   gid: [{ required: true, message: '请选择分组', trigger: 'blur' }],
-  describe: [
+  description: [
     { required: true, message: '请输入描述信息', trigger: 'blur' },
     {
       validator: function (rule, value, callback) {

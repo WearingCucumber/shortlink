@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="optimize: 修改配置连接linux服务器中的nacos">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/dto/resp/UserActualRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/GatewayServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/dto/GatewayErrorResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/shortLink/gateway/filter/TokenValidateGatewayFilterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="0aec77c8-f88f-40dd-a56a-1301f7f537f2" name="Changes" comment="feature: 添加网关模块将登录校验在网管层处理">
+      <change afterPath="$PROJECT_DIR$/project/src/test/java/com/study/ThreadLocalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5587a2-cc9c-4fb6-9703-95d7d639d8cd/storage_v2/_src_/schema/shortlink.dpYphw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserTransmitFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/biz/user/UserTransmitFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/constant/RedisCacheConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/constant/RedisCacheConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/enums/UserErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/common/enums/UserErrorCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/config/UserConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/config/UserConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/study/shortLink/admin/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console-vue/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/src/api/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console-vue/src/views/login/LoginIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/src/views/login/LoginIndex.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/console-vue/src/views/mySpace/MySpaceIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/src/views/mySpace/MySpaceIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console-vue/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-vue/src/views/mySpace/components/createLink/CreateLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/src/views/mySpace/components/createLink/CreateLink.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-vue/src/views/mySpace/components/editLink/EditLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/console-vue/src/views/mySpace/components/editLink/EditLink.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +125,7 @@
       <recent name="C:\Users\lzp\Desktop\shortLink\project\src\main\resources\META-INF\spring" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.study" />
       <recent name="com.study.shortLink.project" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -155,14 +143,23 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayServiceApplication">
-    <configuration name="MQTest.mqSendTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.ThreadLocalTest">
+    <configuration name="ThreadLocalTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.study.ThreadLocalTest" />
       <module name="shortLink-project" />
       <shortenClasspath name="ARGS_FILE" />
-      <option name="PACKAGE_NAME" value="com.study.shortLink.project" />
-      <option name="MAIN_CLASS_NAME" value="com.study.shortLink.project.MQTest" />
-      <option name="METHOD_NAME" value="mqSendTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.study.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <shortenClasspath name="ARGS_FILE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -254,11 +251,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ThreadLocalTest" />
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
         <item itemvalue="Spring Boot.ShortLinkApplication" />
         <item itemvalue="JUnit.NacosTest.nacos" />
-        <item itemvalue="JUnit.MQTest.mqSendTest" />
       </list>
     </recent_temporary>
   </component>
@@ -304,23 +301,9 @@
       <workItem from="1706816817740" duration="17000" />
       <workItem from="1706817184959" duration="619000" />
       <workItem from="1706970311574" duration="14010000" />
-      <workItem from="1707060225453" duration="6492000" />
-    </task>
-    <task id="LOCAL-00043" summary="feature: 添加更具分组标识查询对应短链接数量">
-      <option name="closed" value="true" />
-      <created>1703436963154</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1703436963154</updated>
-    </task>
-    <task id="LOCAL-00044" summary="feature: 短链接分组列表查询返回短链接数量">
-      <option name="closed" value="true" />
-      <created>1704265191547</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1704265191547</updated>
+      <workItem from="1707060225453" duration="8581000" />
+      <workItem from="1707497283660" duration="1385000" />
+      <workItem from="1707661330010" duration="3891000" />
     </task>
     <task id="LOCAL-00045" summary="feature: 创建用户后默认创建对应的默认分组">
       <option name="closed" value="true" />
@@ -698,7 +681,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706986211999</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="fix:修复前端点链接复制按钮内容错误和检查用户名是否存在时判断逻辑永远为true的问题">
+      <option name="closed" value="true" />
+      <created>1707067107841</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1707067107842</updated>
+    </task>
+    <task id="LOCAL-00093" summary="feature: 添加网关模块将登录校验在网管层处理">
+      <option name="closed" value="true" />
+      <created>1707067156712</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1707067156712</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -739,8 +738,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: 修改短链接跳转失败时的风控逻辑" />
-    <MESSAGE value="feature : 开发回收站移除短链接功能" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接访问量监控功能" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接监控访问用户数" />
     <MESSAGE value="feature : 短链接监控功能 开发短链接监控访问UIP数据" />
@@ -764,7 +761,9 @@
     <MESSAGE value="fix: 修改中台服务名错误问题" />
     <MESSAGE value="feature：admin服务端需要远程调用的接口全部使用openFeign的方式进行调用" />
     <MESSAGE value="optimize: 修改配置连接linux服务器中的nacos" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimize: 修改配置连接linux服务器中的nacos" />
+    <MESSAGE value="fix:修复前端点链接复制按钮内容错误和检查用户名是否存在时判断逻辑永远为true的问题" />
+    <MESSAGE value="feature: 添加网关模块将登录校验在网管层处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 添加网关模块将登录校验在网管层处理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -799,16 +798,19 @@
           <line>42</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/PathSetting/jdk-17.0.5/lib/src.zip!/java.base/java/lang/ThreadLocal.java</url>
+          <line>221</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/console-vue/src/views/login/LoginIndex.vue</url>
           <line>193</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/console-vue/src/views/login/LoginIndex.vue</url>
           <line>191</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
